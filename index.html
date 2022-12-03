@@ -6,10 +6,12 @@
   body {
     margin-left: 40px;
     margin-right: 40px;
-    background-color: hsl(214, 35%, 74%);
+    background-color: hsl(214, 22%, 60%);
     color: white;
     image-rendering: pixelated;
     text-align: center;
+    font-family: "Courier New", monospace;
+    font-weight: 10;
   }
 
   h1 {
@@ -18,8 +20,8 @@
     text-align: center;
     text-transform: uppercase;
     margin: 30px;
-    font-size: 60px;
-    font-family: "didot", serif;
+    font-size: 80px;
+    font-family: "georgia", serif;
     font-weight: 50;
     position: relative;
   }
@@ -38,9 +40,9 @@
     border-collapse: collapse;
     margin: 25px 0;
     min-width: 200px;
-    border: 1px solid white;
+    /*     border: 1px solid white; */
     border-radius: 10%;
-    box-shadow: 0 0 20px white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.52);
     margin-left: auto;
     margin-right: auto;
   }
@@ -49,17 +51,19 @@
   .grade-table td {
     padding: 12px 15px;
     text-align: center;
+  }
+
+  .grade-table tbody tr:not(:last-of-type) {
     border-bottom: 1px solid white;
   }
 
-  .grade-table tbody tr: {
-    border-bottom: 1px solid white;
+  .letter-grade {
+    position: fixed;
   }
-  
 </style>
 
 <h1>
-  Anime
+  Anime Review
 </h1>
 <body>
   This is a list of anime that I have watched. They are ordered by how much I personally enjoyed them. To make it easier to gauge the enjoyment of each show, they are given a letter grade based on the following table:
@@ -100,4 +104,14 @@
   <p>
     These rankings are totally my own opinion influenced by my own bias. My favorite genres are romance, comedy, and sports, and my least liked genres are isekai/fantasy and suspense/horror. I am not open to criticism.
   </p>
+  <table class="grade-table">
+    <thead>
+      <tr>
+        <th>Grade</th>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+  </table>
 </body>
