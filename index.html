@@ -12,6 +12,7 @@
     text-align: center;
     font-family: "Courier New", monospace;
     font-weight: 10;
+    cursor: url(takaramarina/cursor.png),auto; 
   }
 
   h1 {
@@ -111,7 +112,50 @@
     box-shadow: 0px 0px 20px 10px pink;
   }
 </style>
-
+<script>
+ function createTrail (x, y) {
+    const glitter = ['☆', '★', '♡', '❤︎', '✴︎']
+    const ran = Math.floor(Math.random() * glitter.length)
+    const glit = glitter[ran]
+    // create span element for emoji
+    const ele = document.createElement('span')
+    ele.textContent = glit
+    ele.className = 'emoji-trail'
+    // size && position emoji
+    ele.style.position = 'fixed'
+    ele.style.left = x + 'px'
+    ele.style.top = y + 'px'
+    ele.style.fontSize = '30px'
+    ele.style.color = 'pink'
+    // set emoji data
+    ele.dataset.velocity = {
+      x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+      y: 1
+    }
+    return ele
+  }
+  
+  function updateGlit (glit) {
+    let x = parseInt(glit.style.left)
+    let y = parseInt(glit.style.top)
+    let f = parseInt(glit.style.fontSize)
+    x += parseInt(glit.dataset.velocity.x)
+    y += parseInt(glit.dataset.velocity.y)
+    f -= 0.25
+    glit.style.left = x + 'px'
+    glit.style.top = y + 'px'
+    glit.style.fontSize = f + 'px'
+    if (f < 0) glit.remove()
+    else setTimeout(updateGlit, 1000 / 30, glit)
+  }
+  
+  window.addEventListener('mousemove', (e) => {
+    // create a new emoji every time the mouse moves
+    const glit = createTrail(e.clientX - 24, e.clientY - 24)
+    document.body.appendChild(glit)
+    updateGlit(glit)
+  })
+</script>
 <div>
   <div class="circle">
     <h1>Anime Review</h1>
