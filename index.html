@@ -6,8 +6,8 @@
   body {
     margin-left: 40px;
     margin-right: 40px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     image-rendering: pixelated;
     text-align: center;
     font-family: "Courier New", monospace;
@@ -15,7 +15,7 @@
   }
 
   h1 {
-    color: hsl(246, 22%, 11%);
+    color: white;
     /*     text-shadow: 2px 2px 10px white; */
     text-align: center;
     text-transform: uppercase;
@@ -32,9 +32,9 @@
     border-collapse: collapse;
     margin: 25px 0;
     min-width: 200px;
-    background-color: black;
+    background-color: white;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.52);
+    box-shadow: 0 0 5px pink;
     margin-left: auto;
     margin-right: auto;
   }
@@ -46,102 +46,21 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
-    background-color: black;
-    animation: flicker 4s steps(10, start) 1;
-    animation-fill-mode: forwards;
+    background-color: pink;
+    animation: bounce 3s ease infinite;
     /*     animation-delay: 4s */
-    box-shadow: 0px 0px 40px hsl(53, 73%, 75%);
+    box-shadow: 0px 0px 40px pink;
   }
 
-  @keyframes flicker {
+  @keyframes bounce {
     0% {
-      background-color: black;
-      box-shadow: 0px 0px 0px black;
+      transform: translateY(20px);
     }
-
-    2% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
+  	50% {
+    	transform: scale(80%) translateY(-20px);  
     }
-
-    5% {
-      background-color: black;
-      box-shadow: 0px 0px 0px black;
-    }
-
-    7% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
-    }
-
-    18% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
-    }
-
-    19% {
-      background-color: black;
-      box-shadow: 0px 0px 0px black;
-    }
-
-    34% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
-    }
-
-/*     35% {
-      background-color: black;
-      box-shadow: 0px 0px 0px black;
-    }
-
-    36% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
-    }
-
-    40% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
-    }  
-
-    41% {
-      background-color: black;
-      box-shadow: 0px 0px 0px black;
-    }
-
-    46% {
-      background-color: black;
-      box-shadow: 0px 0px 0px black;
-    }
-
-    61% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
-    }
-
-    80% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
-    }
-
-    81% {
-      background-color: black;
-      box-shadow: 0px 0px 0px black;
-    }
-
-    85% {
-      background-color: black;
-      box-shadow: 0px 0px 0px black;
-    }
-
-    86% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
-    } */
-
     100% {
-      background-color: hsla(53, 73%, 75%, 0.74);
-      box-shadow: 0px 0px 40px 10px hsl(53, 73%, 75%);
+      transform: translateY(20px);
     }
   }
 
@@ -156,7 +75,7 @@
   }
 
   .grade-table tbody tr:not(:last-of-type) {
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid pink;
   }
 
   .letter-grade {
@@ -173,8 +92,9 @@
   .sticky-header {
     position: sticky;
     top: 20px;
-    background-color: rgba(255, 255, 255, 0.89);
-    color: hsl(214, 22%, 45%);
+    background-color: pink;
+    color: black;
+    text-shadow: 2px 2px 2px white;
     border-radius: 30px;
   }
 
@@ -184,11 +104,11 @@
     text-transform: uppercase;
     bottom: 10px;
     right: 10px;
-    background-color: hsla(53, 73%, 75%, 0.9);
+    background-color: white;
     border-radius: 20px;
     color: black;
     padding: 10px;
-    box-shadow: 0px 0px 20px 10px hsl(53, 73%, 75%);
+    box-shadow: 0px 0px 20px 10px pink;
   }
 </style>
 
