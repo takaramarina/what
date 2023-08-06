@@ -114,6 +114,7 @@
         padding: 10px;
         box-shadow: 0px 0px 20px 10px pink;
       }
+
       .active,
       .button:hover {
         background-color: pink;
@@ -164,9 +165,31 @@
         font-family: "Courier New", monospace;
         font-weight: 10;
       }
+
+      .container {
+        position: relative;
+        width: 115%;
+        height: 1000px;
+        margin-left: -40px;
+        margin-right: -40px;
+        margin-top: -10px;
+
+        .image-container {
+          width: 100%;
+          height: 0;
+          padding-top: 45.347%;
+          position: sticky;
+          top: 0;
+          background-size: cover;
+          background-image: url("1-min.png");
+        }
+      }
     </style>
   </head>
   <body>
+    <div class="container">
+      <div class="image-container"></div>
+    </div>
     <div class="circle">
       <h1>Anime Review</h1>
     </div>
@@ -1236,6 +1259,78 @@
           }
         });
       }
+      // Images asset
+      const images = [
+        '1-min.png', '2-min.png',
+        '3-min.png', '4-min.png',
+        '5-min.png', '6-min.png',
+        '7-min.png', '8-min.png',
+        '9-min.png', '10-min.png',
+        '11-min.png', '12-min.png',
+        '13-min.png', '14-min.png',
+        '15-min.png', '16-min.png',
+        '17-min.png', '18-min.png',
+        '19-min.png', '20-min.png',
+        '21-min.png', '22-min.png',
+        '23-min.png', '24-min.png',
+        '25-min.png', '26-min.png',
+        '27-min.png', '28-min.png',
+        '29-min.png', '30-min.png'
+      ];
+      // Pre-load all images
+      function preloadImages(images, callback) {
+        let loadedCount = 0;
+        const totalImages = images.length;
+
+        function loadImage(index) {
+          if (index >= totalImages) {
+            // All images are loaded, call the callback function
+            callback();
+            return;
+          }
+
+          const img = new Image();
+          img.onload = () => {
+            loadedCount++;
+            if (loadedCount === totalImages) {
+              // All images are loaded, call the callback function
+              callback();
+            } else {
+              // Load the next image in the array
+              loadImage(index + 1);
+            }
+          };
+
+          img.src = images[index];
+        }
+
+        // Start loading the images from the beginning of the array
+        loadImage(0);
+      }
+
+      // Global variable to control the scrolling behavior
+      const step = 10;
+
+      function trackScrollPosition() {
+        const y = window.scrollY;
+        const label = Math.min(Math.floor(y / step) + 1, images.length);
+        const imageToUse = images[label - 1]; // Subtract 1 to match array index
+
+        // Change the background image
+        const imageContainer = document.querySelector('.image-container');
+        imageContainer.style.backgroundImage = `url('${imageToUse}')`;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        preloadImages(images, () => {
+          // All images are loaded, now call the trackScrollPosition function
+          trackScrollPosition();
+          // Add a scroll event listener after images are loaded
+          window.addEventListener('scroll', () => {
+            trackScrollPosition();
+          });
+        });
+      });
     </script>
   </body>
 </html>
