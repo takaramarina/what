@@ -27,7 +27,7 @@
         text-transform: uppercase;
         letter-spacing: 8px;
         margin: 30px;
-        font-size: 500%;
+        font-size: 400%;
         font-family: "Trebuchet MS", sans-serif;
         position: relative;
         top: 60px;
@@ -53,7 +53,7 @@
         margin-right: auto;
         border-radius: 50%;
         background-color: pink;
-        animation: bounce 3s ease-out;
+        animation: bounce 3s linear;
         /*     animation-delay: 4s */
         box-shadow: 0px 0px 40px pink;
       }
@@ -166,30 +166,9 @@
         font-weight: 10;
       }
 
-      .container {
-        position: relative;
-        width: 115%;
-        height: 1000px;
-        margin-left: -40px;
-        margin-right: -40px;
-        margin-top: -10px;
-
-        .image-container {
-          width: 100%;
-          height: 0;
-          padding-top: 45.347%;
-          position: sticky;
-          top: 0;
-          background-size: cover;
-          background-image: url("1-min.png");
-        }
-      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="image-container"></div>
-    </div>
     <div class="circle">
       <h1>Anime Review</h1>
     </div>
@@ -338,7 +317,7 @@
           </td>
           <td>銀の匙<br>
             <b>Silver Spoon</b>
-            <br><br>
+            <br>
             <br>Humor: ★★★★★
             <br>Romance: ★☆☆☆☆
             <br><br>
@@ -356,7 +335,7 @@
           </td>
           <td>月刊少女野崎くん<br>
             <b>Monthly Girls' Nozaki Kun</b>
-            <br><br>
+            <br>
             <br>Humor: ★★★★★
             <br>Romance: ★★★☆☆
             <br><br>
@@ -512,6 +491,20 @@
       </thead>
       <tbody>
         <tr>
+          <td><img src="magi.png" alt="magi">
+          </td>
+          <td>マギ<br>
+            <b>Magi: The Labyrinth of Magic</b>
+            <br><br>
+            Can't summarize it myself because too many good
+            things happen. Here's what Wikipedia had to say: 
+            "Taking place in a fantasy world that borrows elements from One Thousand and One Nights, the story follows a young boy named Aladdin and his traveling companion Alibaba, who go on adventures conquering dungeons to obtain valuable items, metal vessels, and powerful hosts capable of harnessing magic known as djinns. Upon completing their first dungeon, Aladdin learns of his identity as the titular Magi destined to ordain Alibaba to inherit the throne. As a result, the two decide to continue their travels all while forging friendships and rivalries along the way."
+            <br>
+            <br>
+            Great characters, cute animation. 
+          </td>
+        </tr>
+        <tr>
           <td><img src="romkil.png" alt="romkil">
           </td>
           <td>ロマンティックキラー<br>
@@ -523,19 +516,6 @@
             life and fight over her. Comedy, a little satirical at
             times, super fun animation style. Super cheesy
             but that's the whole point of the plot.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="gurren.jpg" alt="Gurren Lagann">
-          </td>
-          <td>天元突破グレンラガン<br>
-            <b>Gurren Lagann</b>
-            <br><br>
-            Boy from underground (who loves to dig holes with
-            his drill) world teams up with many people
-            to save the Earth from being destroyed. Very cool
-            animation that captures so many lines and shapes.
-            Lots of handsome mechas and handsome women.
           </td>
         </tr>
         <tr>
@@ -623,6 +603,7 @@
             entertaining.
           </td>
         </tr>
+        
         <tr>
           <td><img src="yowamushi.png" alt="Yowamushi Pedal">
           </td>
@@ -649,6 +630,19 @@
             He is driven by the want to squeeze boobs.
             The boss is so strong I just want to know where
             she got her powers from. Binge worthy.
+          </td>
+        </tr>
+        <tr>
+          <td><img src="gurren.jpg" alt="Gurren Lagann">
+          </td>
+          <td>天元突破グレンラガン<br>
+            <b>Gurren Lagann</b>
+            <br><br>
+            Boy from underground (who loves to dig holes with
+            his drill) world teams up with many people
+            to save the Earth from being destroyed. Very cool
+            animation that captures so many lines and shapes.
+            Lots of handsome mechas and handsome women.
           </td>
         </tr>
         <tr>
@@ -1259,78 +1253,7 @@
           }
         });
       }
-      // Images asset
-      const images = [
-        '1-min.png', '2-min.png',
-        '3-min.png', '4-min.png',
-        '5-min.png', '6-min.png',
-        '7-min.png', '8-min.png',
-        '9-min.png', '10-min.png',
-        '11-min.png', '12-min.png',
-        '13-min.png', '14-min.png',
-        '15-min.png', '16-min.png',
-        '17-min.png', '18-min.png',
-        '19-min.png', '20-min.png',
-        '21-min.png', '22-min.png',
-        '23-min.png', '24-min.png',
-        '25-min.png', '26-min.png',
-        '27-min.png', '28-min.png',
-        '29-min.png', '30-min.png'
-      ];
-      // Pre-load all images
-      function preloadImages(images, callback) {
-        let loadedCount = 0;
-        const totalImages = images.length;
-
-        function loadImage(index) {
-          if (index >= totalImages) {
-            // All images are loaded, call the callback function
-            callback();
-            return;
-          }
-
-          const img = new Image();
-          img.onload = () => {
-            loadedCount++;
-            if (loadedCount === totalImages) {
-              // All images are loaded, call the callback function
-              callback();
-            } else {
-              // Load the next image in the array
-              loadImage(index + 1);
-            }
-          };
-
-          img.src = images[index];
-        }
-
-        // Start loading the images from the beginning of the array
-        loadImage(0);
-      }
-
-      // Global variable to control the scrolling behavior
-      const step = 10;
-
-      function trackScrollPosition() {
-        const y = window.scrollY;
-        const label = Math.min(Math.floor(y / step) + 1, images.length);
-        const imageToUse = images[label - 1]; // Subtract 1 to match array index
-
-        // Change the background image
-        const imageContainer = document.querySelector('.image-container');
-        imageContainer.style.backgroundImage = `url('${imageToUse}')`;
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        preloadImages(images, () => {
-          // All images are loaded, now call the trackScrollPosition function
-          trackScrollPosition();
-          // Add a scroll event listener after images are loaded
-          window.addEventListener('scroll', () => {
-            trackScrollPosition();
-          });
-        });
-      });
+      
     </script>
   </body>
 </html>
