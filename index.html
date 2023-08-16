@@ -12,12 +12,13 @@
       body {
         margin-left: 40px;
         margin-right: 40px;
-        background-color: white;
+        background-color: rgb(242, 235, 226);
         color: black;
         image-rendering: pixelated;
         text-align: center;
         font-family: "Courier New", monospace;
         font-weight: 10;
+        display: flex;
       }
 
       h1 {
@@ -38,12 +39,16 @@
         border-collapse: collapse;
         margin: 25px 0;
         min-width: 200px;
-        background-color: white;
+        background-color: rgb(249, 242, 234);
         border-radius: 20px;
         box-shadow: 0 0px 4px pink;
         margin-left: auto;
         margin-right: auto;
       }
+            .active {
+    font-weight: bold;
+    color: #007bff; /* or any color you prefer */
+}
 
       .circle {
         height: 200px;
@@ -115,9 +120,32 @@
         box-shadow: 0px 0px 20px 10px pink;
       }
 
+      .sidebar {
+        position: fixed;
+        font-family: "Courier New", monospace;
+        color: black;
+        left: 10px;
+        top: 10px;
+        font-size: 20px;
+      }
+
+      .topic-list {
+        list-style: none;
+        padding-left: 20px;
+        padding-top: 100px;
+      }
+
+      .topic-list li {
+        margin-bottom: 10px;
+      }
+
       .active,
       .button:hover {
         background-color: pink;
+      }
+
+      .wrapper {
+        margin-left: 120px;
       }
 
       .collapsible {
@@ -165,19 +193,28 @@
         font-family: "Courier New", monospace;
         font-weight: 10;
       }
+      
 
     </style>
   </head>
   <body>
-    <div class="circle">
-      <h1>Anime Review</h1>
+    <div class="sidebar">
+      <ul class="topic-list">
+        <li><a href="#details">Details</a></li>
+        <li><a href="#A+">A+</a></li>
+        <!-- Add more topics here -->
+      </ul>
     </div>
-    <a class="button" href="mailto:takararts@gmail.com">Send Me Anime Recs!</a>
-    <div>
-      <body>
+    <div class="wrapper">
+      <div class="circle">
+        <h1>Anime Review</h1>
+      </div>
+      <a class="button" href="mailto:takararts@gmail.com">Send Me Anime Recs!</a>
+      <div>
         <br><br>
         <button type="button" class="collapsible">details</button>
         <div class="content">
+          <section id="details">
           <p>This is a list of anime that I have watched, annotated
             with a small summary (mostly free of spoilers) as well
             as my own thoughts. They are ordered by how much I
@@ -243,959 +280,959 @@
             <br>
           </p>
           </p>
-
+         </section>
         </div>
         <br><br>
-      </body>
+      </div>
+    <section id="A+">
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: A+</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="haikyuu.png" alt="haikyuu">
+            </td>
+            <td>ハイキュー!!<br>
+              <b>Haikyuu!!</b>
+              <br><br>Humor: ★★★★☆
+              <br>Romance: ★☆☆☆☆
+              <br><br>Short boy dreams of becoming a great
+              volleyball player, then makes this into reality
+              when he meets a great team with a particularly
+              great setter. I’ve rewatched this so many times,
+              so the high ranking is probably a little sentimental,
+              but it's a great anime with a wide range of likeable
+              characters, satisfying plot (although repetitive,
+              but that's to be expected for a sports anime),
+              and a nice mix of humor and emotional moments.
+              There's also 4 seasons plus a bunch of OVAs, so
+              plenty of content to binge watch while we patiently
+              wait for a new season that may or may not be coming.
+              The only complaint I have is that the animation in
+              season 4 is really sucky sometimes, but that was
+              when COVID first hit, so I will give them a break.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="wotakoi.png" alt="wotakoi">
+            </td>
+            <td>ヲタクに恋は難しい<br>
+              <b>Wotakoi (wotaku ni koi wa muzukashii)</b>
+              <br><br>Humor: ★★★★★
+              <br>Romance: ★★★★★
+              <br><br>Childhood friends unexpectedly meet again
+              at a new workplace and fall in love, mostly due
+              to their shared identity as otaku. Green hair and
+              orange hair are also an otaku couple, but they seem
+              to express their love through arguments and bickering,
+              which is entertaining to watch and really makes it
+              special when they do have sentimental, lovey-dovey
+              moments. All three love arcs in this anime are quality.
+              <br> Good subtitles from what I've seen, but there
+              are some internet slangs used in the show that aren't
+              translated at all.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </section>
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: A</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="silver.png" alt="Silver Spoon">
+            </td>
+            <td>銀の匙<br>
+              <b>Silver Spoon</b>
+              <br>
+              <br>Humor: ★★★★★
+              <br>Romance: ★☆☆☆☆
+              <br><br>
+              Boy from Sapporo is book smart but has no ambition
+              in life. He gets sent to a rural farming boarding
+              school where he has to get used to the unexpectedly
+              difficult world outside of the classroom. Very
+              subtle nuances of romance but overall wholesome
+              anime about a depressed burnout gifted kid finding
+              friends and fun in the countryside.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="monthly.png" alt="Nozaki Kun">
+            </td>
+            <td>月刊少女野崎くん<br>
+              <b>Monthly Girls' Nozaki Kun</b>
+              <br>
+              <br>Humor: ★★★★★
+              <br>Romance: ★★★☆☆
+              <br><br>
+              A girl tries to confess to her crush, and he
+              thinks that she’s asking for his autograph because
+              he is actually a very famous manga writer (although
+              nobody at school knows). She becomes his assistant
+              in hopes that she can get close with him and make
+              him realize her feelings. He is dumb and blind and
+              is always looking for inspiration for his manga.
+              Actually, every single character in this anime is
+              remarkably clueless.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="ouran.png" alt="Ouran">
+            </td>
+            <td>桜蘭高校ホスト部<br>
+              <b>Ouran High School Host Club</b>
+              <br><br>Humor: ★★★★★
+              <br>Romance: ★★★☆☆
+              <br><br>The protagonist becomes a host at her
+              rich private school's host club, where she
+              entertains her rich classmates with tea, small
+              talk, and basically just giving them attention.
+              However, she is hiding her gender and the fact
+              that she is actually there to repay the debt of
+              an expensive vase she broke on her first day as
+              a student. The blonde man is wildly in love with
+              her but doesn’t realize because he is stupid.
+              All the other hosts are charming and quirky in
+              their own way. Each episode is so ridiculous it
+              keeps you on your toes.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="aot.png" alt="AOT">
+            </td>
+            <td>進撃の巨人<br>
+              <b>Attack on Titan</b>
+              <br><br>Humor: ☆☆☆☆☆
+              <br>Romance: ☆☆☆☆☆
+              <br><br>Humanity fights titans.
+              Nice story. Very binge worthy.
+              Animation style changes in the middle and it's
+              a little distracting at first, but you get used to it.
+              When will they actually end the anime.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="kiss.png" alt="Kiss Him Not Me">
+            </td>
+            <td>私がモテてどうすんだ<br>
+              <b>Kiss Him Not Me</b>
+              <br><br>Humor: ★★★★★
+              <br>Romance: ★★★★★
+              <br><br>Chubby girl (who is obsessed with BL manga)
+              loses weight due to extreme shock from her favorite
+              character's death. Five hot people fight over her.
+              Kind of like Ouran but everyone is fighting for the
+              girl. Super lighthearted and funny, comedic changes
+              in animation style, pretty solid subtitles.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="saint.png" alt="Saint Young Men">
+            </td>
+            <td>聖☆おにいさん<br>
+              <b>Saint Young Men</b>
+              <br><br>Humor: ★★★★★
+              <br>Romance: ☆☆☆☆☆
+              <br><br>Jesus and Buddha live together in modern
+              day Tokyo. Comedy and Slice of life, subtitles
+              suck because some things in this anime are really
+              hard to translate without cultural context. Movie
+              length. The manga might be better for English
+              speakers, but I really enjoyed the anime regardless.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="oremonogatari.png" alt="Ore Monogatari">
+            </td>
+            <td>俺物語!!<br>
+              <b>Ore Monogatari!!</b>
+              <br><br>Humor: ★★★★★
+              <br>Romance: ★★★★★
+              <br><br>Big high school boy saves a little high
+              school girl from a creepy dude on the train and
+              then falls in love with her. They are both very
+              awkward and inexperienced, and he thinks that
+              she likes his best friend at first, but they
+              figure it out. Very cute.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="initial.png" alt="Initial D">
+            </td>
+            <td>頭文字D(イニシャルD)<br>
+              <b>Initial D</b>
+              <br><br>Humor: ★★★★☆
+              <br>Romance: ★☆☆☆☆
+              <br><br>
+              Unassuming dumb looking young man is literally
+              the fastest street racer alive other than his
+              old man, but even he doesn't realize that he's
+              fast since he doesn't race against other people,
+              he just makes tofu deliveries at the ass crack
+              of dawn and wants to be done as soon as possible.
+              Old anime but classic for a reason.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="jjk.jpg" alt="JJK">
+            </td>
+            <td>呪術廻戦
+              <br><b>Jujutsu Kaisen</b>
+              <br><br>Humor: ★★★★☆
+              <br>Romance: ☆☆☆☆☆
+              <br><br>Dude with (almost) superhuman physical
+              abilities gains actual superhuman abilities
+              by swallowing the finger of a really strong
+              dude. He then joins other strong people in
+              defeating curses and bad people. Good characters,
+              good plot, great animation, looking forward
+              to finishing season 2 later this year. The movie
+              is a must-watch btw it's not just an OVA.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="yuri.png" alt="Yuri on Ice">
+            </td>
+            <td>ユーリ!!! <b>On ICE
+                <br>Yuri on Ice</b>
+              <br><br>Humor: ★★★☆☆
+              <br>Romance: ★★☆☆☆
+              <br><br>Yuri wants to be a better ice skater,
+              but he kind of sucks. Victor, a world-famous
+              champion, basically retires to coach Yuri
+              because a video of Yuri informally skating
+              Victor's program goes viral. Gay (although
+              there are debates on whether some moments are
+              canon or not).
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: A-</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="magi.png" alt="magi">
+            </td>
+            <td>マギ<br>
+              <b>Magi: The Labyrinth of Magic</b>
+              <br><br>
+              Can't summarize it myself because too many good
+              things happen. Here's what Wikipedia had to say:
+              "Taking place in a fantasy world that borrows elements from One Thousand and One Nights, the story follows a young boy named Aladdin and his traveling companion Alibaba, who go on adventures conquering dungeons to obtain valuable items, metal vessels, and powerful hosts capable of harnessing magic known as djinns. Upon completing their first dungeon, Aladdin learns of his identity as the titular Magi destined to ordain Alibaba to inherit the throne. As a result, the two decide to continue their travels all while forging friendships and rivalries along the way."
+              <br>
+              <br>
+              Great characters, cute animation.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="romkil.png" alt="romkil">
+            </td>
+            <td>ロマンティックキラー<br>
+              <b>Romantic Killer</b>
+              <br><br>Girl is only obsessed with games and
+              chocolate and her cat, but a magical entity takes
+              those away from her and forcibly changes her life
+              into an otome game where hot men appear into her
+              life and fight over her. Comedy, a little satirical at
+              times, super fun animation style. Super cheesy
+              but that's the whole point of the plot.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="yourname.jpeg" alt="Your Name">
+            </td>
+            <td>君の名は。<br>
+              <b>Your Name.</b>
+              <br><br>
+              A girl and a guy keep switching into each other's
+              bodies, and they soon discover that they are
+              actually from slightly different timelines as well.
+              The guy realizes that the girl is in danger, so
+              he does everything he can to try and save her
+              despite their conflicting time lines. A beautiful
+              movie, great even for non-anime watchers, stunning
+              visuals and a really striking storyline.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: B+</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="horimiya.png" alt="Horimiya">
+            </td>
+            <td>ホリミヤ<br>
+              <b>Horimiya</b>
+              <br><br>Shy introverted boy turns out to be very
+              cool with piercings and tats, falls in love with
+              the girl in the middle. Everyone falls in love
+              with someone. Nice school love story.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="hige.png" alt="hige">
+            </td>
+            <td>ひげを剃る。そして女子高生を拾う<br>
+              <b>Hige wo soru. Soshite jyoshikousei wo hirou.</b>
+              <br><br>Working salaryman finds a random runaway
+              teenage girl and lets her live at his house while
+              she figures things out. Surprisingly wholesome
+              even with the sad back story of the girl. Is this
+              a romance anime? He’s more of a father/big brother
+              figure. I cried.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="april.png" alt="Your Lie in April">
+            </td>
+            <td>四月は君の嘘<br>
+              <b>Your Lie in April</b>
+              <br><br>Bold girl with chronic illness pulls the
+              shy piano boy out of his shell. Tbh I don’t remember
+              the ending even though I’ve watched this multiple
+              times. I remember I cried a lot.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: B</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="kingdom.jpg" alt="Kingdom">
+            </td>
+            <td>キングダム<br>
+              <b>Kingdom</b>
+              <br><br>Peasant boy rises the ranks in Qin dynasty
+              of China and becomes good friends with the
+              child emperor.
+              His dream is to be the best general ever.
+              Lots of battles. Impressionable characters.
+              Questionable on the historical accuracy but
+              entertaining.
+            </td>
+          </tr>
+
+          <tr>
+            <td><img src="yowamushi.png" alt="Yowamushi Pedal">
+            </td>
+            <td>弱虫ペダル<br>
+              <b>Yowamushi Pedal</b>
+              <br><br>Otaku boy turns out to be really good
+              at cycling because he cycles dozens of miles to
+              get to Akihabara to save money on travel and spend
+              it on his nerdy hobbies. Wholesome sports anime,
+              good characters, good plots, feel-good, really
+              really gross side character that I hate but you
+              can skip those parts (although he does show up a
+              lot). Very satisfying to watch, lots of humor.
+              Binge-worthy.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="chainsawman" alt="Chainsaw man">
+            </td>
+            <td>チェインソーマン<br>
+              <b>Chainsaw Man</b>
+              <br><br>Half human half demon boy is hired to
+              kill demons with a quirky team of individuals.
+              He is driven by the want to squeeze boobs.
+              The boss is so strong I just want to know where
+              she got her powers from. Binge worthy.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="gurren.jpg" alt="Gurren Lagann">
+            </td>
+            <td>天元突破グレンラガン<br>
+              <b>Gurren Lagann</b>
+              <br><br>
+              Boy from underground (who loves to dig holes with
+              his drill) world teams up with many people
+              to save the Earth from being destroyed. Very cool
+              animation that captures so many lines and shapes.
+              Lots of handsome mechas and handsome women.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="penguin.jpeg" alt="Penguin Highway">
+            </td>
+            <td>ペンギンハイウェイ<br>
+              <b>Penguin Highway</b>
+              <br><br>Super serious little boy researches why
+              penguins keep on mysteriously appearing in his town.
+              Beautiful animation, questionable actions by the
+              beautiful lady, handsome father, very anime-esque
+              plot. Movie length!
+            </td>
+          </tr>
+          <tr>
+            <td><img src="cider.png" alt="Words Bubble Up Like Soda Pop">
+            </td>
+            <td>ソーダのように言葉が湧き上がる<br>
+              <b>Words Bubble Up Like Soda Pop</b>
+              <br><br>Super cute movie about a social media
+              influencer who is insecure about her bunny teeth
+              and a super shy boy who writes haiku. They look
+              for a record together and stuff. I'm sure more
+              happens in the movie but I lowkey forgot because
+              I only watched it once. The animation colors are
+              super vibrant and refreshing.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="free.png" alt="Free!">
+            </td>
+            <td><b>Free!</b>
+              <br><br>Hot men. Good youth. What a lovely time.
+              TBH I don’t remember the plot. I assume they swim.
+              I remember it was great. I rewatched it like twice.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="komi.png" alt="Komi can't communicate">
+            </td>
+            <td>古見さんは、コミュ症です。<br>
+              <b>Komi Can't Communicate</b>
+              <br><br>Komi has a hard time speaking to other
+              people because of her social anxiety/communication
+              disorder, but she has a goal to make 100 friends.
+              She slowly accomplishes this goal by befriending
+              very quirky people at her school. Very wholesome,
+              very humorous - the anime takes the lighthearted
+              route rather than a serious one.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="orange.png" alt="orange">
+            </td>
+            <td><b>Orange</b>
+              <br><br>I remember really liking this anime but
+              it wasn’t memorable enough for me to remember.
+              I think someone dies.
+              Oh yeah I just looked up the plot and it’s the one
+              where they get letters from themselves in the future
+              asking them to save their friend from suicide.
+              Very classic anime plot, it was enjoyable.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="war.png" alt="Love is War">
+            </td>
+            <td>かぐや様は告らせたい ～天才たちの恋愛頭脳戦～<br>
+              <b>Love is War</b>
+              <br><br> note: I
+              <br><br>Two elite students like each other but will
+              rather literally die than confess their love because
+              the person who confesses first is always inferior in
+              a relationship. Super good anime, I have to finish
+              watching it. I think that there is a second season now.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="kake.png" alt="Kakegurui">
+            </td>
+            <td>賭ケグルイ<br><b>Kakegurui</b>
+              <br><br>Black haired heroine transfers into gambling school and is super good at gambling so she stirs things up at the school. Lots of gambling, lots of erotic references and drool, pretty good anime. I enjoyed it. I think there is a season 2 but I haven't seen it.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="weather.png" alt="Weathering With You">
+            </td>
+            <td>天気の子<br>
+              <b>Weathering With You</b>
+              <br><br>Girl can control the weather, they fall in
+              love. Good movie.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="deathnote.png" alt="Death Note">
+            </td>
+            <td>デスノート<br>
+              <b>Death Note</b>
+              <br><br>Super smart dude somehow gets a notebook
+              that kills anyone whose names are written down in
+              it. Another super smart dude tries to catch him.
+              It was a pretty good plot but I don’t think I would
+              rewatch.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="golden.png" alt="Golden Time">
+            </td>
+            <td>ゴールデンタイム<br>
+              <b>Golden Time</b>
+              <br><br>Guy gets amnesia at end of high school and
+              goes to college with no memories. Meets new friends,
+              makes a girlfriend, but memories fleet back sometimes
+              - but new and old self can’t coexist, and he realizes
+              that his new self will soon be erased. A little lacking
+              in humor for my taste, it’s a pretty serious story.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="saiki.png" alt="Saiki K">
+            </td>
+            <td>斉木楠雄のΨ難<br>
+              <b>The Disastrous Life of Saiki K.</b>
+              <br><br>Saiki navigates his life with his supernatural
+              and quite frankly unfairly strong powers surrounded
+              by idiots. No overarching storyline, just individual
+              episodes, so very low commitment. Filled with dry
+              sarcasm from Saiki. Pretty funny. Subtitles kind of suck.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="sakamoto.png" alt="Sakamoto">
+            </td>
+            <td>坂本ですが？<br>
+              <b>Haven't You Heard? I'm Sakamoto</b>
+              <br><br>Same type of show as Saiki K. Pretty good
+              for a background show. It’s just Sakamoto being cool af.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="kuroko.png" alt="Kuroko's Basketball">
+            </td>
+            <td>黒子のバスケ<br>
+              <b>Kuroko's Basketball</b>
+              <br><br>The main character is a good basketball
+              player because he is so unremarkable that players
+              don’t see him on the court. He is on a mission to
+              beat all of his former teammates, who are all god-level.
+              The plot is repetitive but it’s a solid show. Muscular arms.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="class.png" alt="Classroom of the Elite">
+            </td>
+            <td>ようこそ実力至上主義の教室へ<br>
+              <b>Classroom of the Elite</b>
+              <br><br>Super smart students are divided into classes
+              from A to D, and these classes are ranked based on the
+              class’s whole performance. The main dude is smart af
+              and was bred in some sort of facility or something but
+              he always lays low and makes sure to perform the average.
+              He helps his class perform well in various tests but
+              never takes the credit. But he seems to have an ulterior
+              motive.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="pancreas.png" alt="I Want to Eat Your Pancreas">
+            </td>
+            <td>君の膵臓をたべたい<br>
+              <b>I Want to Eat Your Pancreas</b>
+              <br><br>Girl with terminal illness befriends an antisocial
+              guy and does things on her bucket list with him.
+              <br>Pretty good movie I guess but there’s like zero comedy
+              so make sure you’re in a serious mood
+            </td>
+          </tr>
+          <tr>
+            <td><img src="koi-wa.jpeg" alt="After the Rain">
+            </td>
+            <td>恋は雨上がりのように<br>
+              <b>After the Rain</b>
+              <br><br>High school girl is in love with her boss, who is 45.
+              <br>Kinda wholesome I guess? But it had more comedy potential
+              that wasn’t fulfilled, also kinda weird how the boss isn’t
+              an adult enough to completely deny her fantasies. Maybe
+              it's a social commentary.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="high-rise.jpg" alt="High-rise">
+            </td>
+            <td>天空侵犯<br>
+              <b>High-Rise Invasion</b>
+              <br><br>Pretty solid plot but it’s kind of scary to
+              watch by yourself haha lots of gore tbh. Oh yeah it’s
+              the netflix show where the people are dropped off on
+              the roofs of buildings or whatever and then they have
+              to run away from the masked people, who are trying to
+              murder them all.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="neverland.png" alt="The Promised Neverland">
+            </td>
+            <td>約束のネバーランド<br>
+              <b>The Promised Neverland</b>
+              <br><br>Kids in orphanage are actually fed to monsters.
+              The orphans find this out so they try to escape. Pretty
+              good anime, pretty gory, wouldn’t rewatch but would
+              watch season 2
+              <br>Ok jk I got info that season 2 is not interesting
+            </td>
+          </tr>
+          <tr>
+            <td><img src="erased.png" alt="erased">
+            </td>
+            <td><b>Erased</b>
+              <br><br>Boy rescues girl from abusive home situation
+              and an unexpected person is the antagonist. TBH don’t
+              remember the plot too well but it was pretty good
+            </td>
+          </tr>
+          <tr>
+            <td><img src="banana.png" alt="Banana fish">
+            </td>
+            <td><b>Banana Fish</b>
+              <br><br>Japanese photographer boy gets caught up in
+              American gang violence.
+              <br>Good plot i guess… did not like the ending.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: B-</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="masamune.jpeg" alt="Masamune Kun No Revenge">
+            </td>
+            <td>政宗くんのリベンジ<br>
+              <b>Masamune Kun No Revenge</b>
+              <br><br>A formerly chubby guy gets hot and plots
+              revenge on the girl that broke his heart by getting
+              her to fall in love with him so that he can reject her.
+              <br>It was okay I guess. I don’t like seeing women
+              fight over a mediocre man. Also there needs to be an
+              actual ending where she figures out everything… Would
+              rate higher if they come out with season 2 that has an
+              actual ending.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="mashiro.jpeg" alt="Mashiro No Oto">
+            </td>
+            <td>ましろのおと<br>
+              <b>Mashiro No Oto</b>
+              <br><br>A boy who plays shamisen goes out and plays
+              shamisen… only watched two episodes, is probably a
+              really good story but it’s pretty serious so I’m not
+              entirely that interested.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="noragami.png" alt="noragami">
+            </td>
+            <td>ノラガミ<br>
+              <b>Noragami</b>
+              <br><br>A pretty low rank god meets a girl and
+              they fight monsters together. A boy turns into a
+              sword. Funny at times but overall a pretty serious
+              storyline, not my personal favorite since it’s very
+              action/serious/fantasy
+            </td>
+          </tr>
+          <tr>
+            <td><img src="suki.jpeg" alt="Say i love you">
+            </td>
+            <td>好きっていいなよ<br>
+              <b>Say "I Love You"</b>
+              <br><br>Shy girl and popular guy fall in love.
+              I don’t really remember anything else. Would
+              probably rank higher if I rewatch it but I’m
+              not a real fan of the animation style.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="househusband.jpeg" alt="The Way of the House Husband">
+            </td>
+            <td>極主夫道<br>
+              <b>The Way of the Househusband</b>
+              <br><br>I loved the manga but sadly the anime
+              wasn’t great, the animation style was really
+              leaning to a manga reading experience rather
+              than a smooth anime and it was a little too
+              simple. But anyways it’s an ex-yakuza member
+              who is now a loving stay-at-home househusband
+              (I don’t think he has a kid yet but I don’t
+              remember). Would recommend the manga but not
+              really the anime.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="toradora.jpg" alt="Toradora">
+            </td>
+            <td>とらドラ！<br>
+              <b>Toradora</b>
+              <br><br> Note: I
+              <br><br>Small feisty girl is enemies with mean
+              faced but kind hearted boy, but then they grow
+              closer and fall in love probably idk. I’ve started
+              this one a couple of times but never finished it.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="march.jpeg" alt="March Comes In Like a Lion">
+            </td>
+            <td>３月のライオン<br>
+              <b>March Comes In Like a Lion</b>
+              <br><br>Note: I
+              <br><br>Shogi whiz gets taken in by a nice girl
+              and her nice mom and little sister. I don’t think
+              I finished the anime bc it’s a slow and wholesome one.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: C</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="uramichi.webp" alt="Uramichi Oniisan">
+            </td>
+            <td>うらみちお兄さん<br>
+              <b>Uramichi Oniisan</b>
+              <br><br>Note: I
+              <br><br>Self deprecating and depressed man is
+              one of the hosts for a kids show. Lots of sarcasm
+              and depressing adult jokes, kind of a background
+              show. It's trying to be Saiki K and Sakamoto, but
+              it doesn't quite get there. Maybe it's funny if
+              you're depressed?
+            </td>
+          </tr>
+          <tr>
+            <td><img src="food.png" alt="food wars">
+            </td>
+            <td>食撃のソーマ<br>
+              <b>Food Wars</b>
+              <br><br>There’s a good plot but there’s so much
+              erotic things going on. The boobs are big and
+              while I enjoy big boobs these boobs are too
+              distracting and unnecessary. But the plot is
+              pretty good, the son of some restaurant owner
+              makes his way up the ranks of a culinary school.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="cells.jpeg" alt="cells at work">
+            </td>
+            <td>はたらく細胞!!<br>
+              <b>Cells at Work!</b>
+              <br><br>Note: I
+              <br><br>Personified, anime-fied version of human
+              body cells, systems, functions. Caters to a very
+              niche audience and I don’t think I am a part of
+              that audience. Good for all you pre meds out there.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="bunny.jpeg" alt="Bunny Girl Senpai">
+            </td>
+            <td>青春ブタ野郎はバニーガール先輩の夢を見ない
+              <br><b>Rascal Does Not Dream of Bunny Girl Senpai</b>
+              <br><br>Note: I
+              <br><br>I don’t think I’ve actually finished
+              watching it, I’ve tried a couple of times but
+              it was pretty boring I think. From what I remember,
+              this dude keeps seeing his senpai in a bunny girl
+              costume and nobody else seems to be seeing her.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="seven.jpeg" alt="Seven Deadly Sins">
+            </td>
+            <td>七つの大罪
+              <br><b>Seven Deadly Sins</b>
+              <br><br>Note: I
+              <br><br>Don’t see the hype. I guess it could be
+              entertaining for kids but there’s big boobs
+              everywhere. Kinda forgot the plot.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="maid.png" alt="maid-sama">
+            </td>
+            <td>会長はメイド様！
+              <br><b>Kaicho Wa Maid Sama!</b>
+              <br><br>Note: I
+              <br><br>Didn’t finish watching it but it was a
+              basic romance drama I think. Probably won’t
+              finish watching it.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: F</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="onizuka.jpeg" alt="Onizuka">
+            </td>
+            <td><b>Great Teacher Onizuka</b>
+              <br><br>Note: I
+              <br><br>This anime is old and you can really tell.
+              He’s a teacher and kinda pervy
+            </td>
+          </tr>
+          <tr>
+            <td><img src="swa.jpg" alt="SWA">
+            </td>
+            <td>ソードアート　オンライン
+              <br><b>Sword Art Online</b>
+              <br><br>Note: I
+              <br><br>I didn’t finish watching but… I’m not that
+              eager to finish watching it … I watched the first
+              couple of episodes but it wasn’t great. Was it some
+              kind of VR game world? I heard the later seasons
+              are better but I’m not even interested.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="anime-table grade-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Grade: I</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="mieruko.jpg" alt="Mieruko Chan">
+            </td>
+            <td>見える子ちゃん
+              <br><b>Mieruko Chan</b>
+              <br><br>This girl can see monsters and ghosts,
+              even though nobody else around her seems to be
+              able to see them.
+              <br>COULD NOT FINISH WATCHING! TOO SCARY
+              <br>The first scene was something CRAWLING OUT
+              OF THE FRIDGE no thank you :)
+              <br>I did try to watch it several times but
+              from what I remember, it was just very grotesque
+              and gross (not in a graphic way but just in a
+              really gross kimoi kind of way) and I simply did
+              not enjoy watching the show. Maybe there's a good
+              plot to make up for it somewhere? I'm not going
+              to find out, though
+            </td>
+          </tr>
+          <tr>
+            <td><img src="ijiranaide.webp" alt="Ijiranaide">
+            </td>
+            <td>イジらないで、長瀞さん
+              <br><b>Ijiranaide, Nagatoro-san</b>
+              <br><br>The girls were too annoying so I didn’t
+              finish watching the first episode. Gyaru type.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="inuyasha.jpg" alt="Inuyasha">
+            </td>
+            <td>犬夜叉
+              <br><b>Inuyasha</b>
+              <br><br>Cute comfort show. A group of hooligans
+              defeat monsters. There are so many episodes.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="hunter.jpg" alt="Hunter X Hunter">
+            </td>
+            <td>ハンターxハンター<br>
+              <b>Hunter x Hunter</b>
+              <br><br>I only watched a couple of episodes of
+              this (I think the first two or three?), so I don't
+              really know what happens later on in the show, but
+              it seemed like a pretty good show from the episodes
+              that I did see. It's not super high on my list of
+              priorities, though. Maybe if I'm watching it with
+              my younger siblings or something? I didn't really
+              see the appeal for me to watch it by myself, kind
+              of felt like a kids' anime.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="jojo.jpg" alt="Jojo">
+            </td>
+            <td>ジョジョの奇妙な冒険
+              <br><b>Jojo's Bizzare Adventures</b>
+              <br><br>I've been meaning to watch more than just
+              the first episode of this anime because I was really
+              disappointed by the episode but people told me that
+              it gets better over time... Maybe when I have the
+              free time and motivation? Not very high on my
+              priorities, though.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="fma.jpg" alt="FMA">
+            </td>
+            <td>鋼の錬金術師 <b>FULLMETAL ALCHEMIST
+                <br>Fullmetal Alchemist: Brotherhood</b>
+              <br><br>I've briefly seen a couple episodes. Like
+              the previous ones on this list, it's just not my
+              favorite genre so I'm not too eager to pick it up
+              and finish it by myself, but I see the appeal,
+              especially for younger audiences.
+            </td>
+          </tr>
+          <tr>
+            <td><img src="evangelion.jpg" alt="Evangelion">
+            </td>
+            <td>新世紀エヴァンゲリオン
+              <br><b>Neon Genesis Evangelion</b>
+              <br><br>I think I actually watched quite a big
+              chunk of this anime, but I do not remember some
+              key elements, so I don't think I can give it a
+              fair rating. It's not in my usual genre of anime
+              that I watch, and I know that there is a lot of
+              messages and imagery in it, so I'd love to sit
+              down and watch it with all of my concentration
+              when I am feeling up for it.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      by MT 2023
     </div>
-    <!--   </body>
-  <body> -->
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: A+</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="haikyuu.png" alt="haikyuu">
-          </td>
-          <td>ハイキュー!!<br>
-            <b>Haikyuu!!</b>
-            <br><br>Humor: ★★★★☆
-            <br>Romance: ★☆☆☆☆
-            <br><br>Short boy dreams of becoming a great
-            volleyball player, then makes this into reality
-            when he meets a great team with a particularly
-            great setter. I’ve rewatched this so many times,
-            so the high ranking is probably a little sentimental,
-            but it's a great anime with a wide range of likeable
-            characters, satisfying plot (although repetitive,
-            but that's to be expected for a sports anime),
-            and a nice mix of humor and emotional moments.
-            There's also 4 seasons plus a bunch of OVAs, so
-            plenty of content to binge watch while we patiently
-            wait for a new season that may or may not be coming.
-            The only complaint I have is that the animation in
-            season 4 is really sucky sometimes, but that was
-            when COVID first hit, so I will give them a break.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="wotakoi.png" alt="wotakoi">
-          </td>
-          <td>ヲタクに恋は難しい<br>
-            <b>Wotakoi (wotaku ni koi wa muzukashii)</b>
-            <br><br>Humor: ★★★★★
-            <br>Romance: ★★★★★
-            <br><br>Childhood friends unexpectedly meet again
-            at a new workplace and fall in love, mostly due
-            to their shared identity as otaku. Green hair and
-            orange hair are also an otaku couple, but they seem
-            to express their love through arguments and bickering,
-            which is entertaining to watch and really makes it
-            special when they do have sentimental, lovey-dovey
-            moments. All three love arcs in this anime are quality.
-            <br> Good subtitles from what I've seen, but there
-            are some internet slangs used in the show that aren't
-            translated at all.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: A</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="silver.png" alt="Silver Spoon">
-          </td>
-          <td>銀の匙<br>
-            <b>Silver Spoon</b>
-            <br>
-            <br>Humor: ★★★★★
-            <br>Romance: ★☆☆☆☆
-            <br><br>
-            Boy from Sapporo is book smart but has no ambition
-            in life. He gets sent to a rural farming boarding
-            school where he has to get used to the unexpectedly
-            difficult world outside of the classroom. Very
-            subtle nuances of romance but overall wholesome
-            anime about a depressed burnout gifted kid finding
-            friends and fun in the countryside.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="monthly.png" alt="Nozaki Kun">
-          </td>
-          <td>月刊少女野崎くん<br>
-            <b>Monthly Girls' Nozaki Kun</b>
-            <br>
-            <br>Humor: ★★★★★
-            <br>Romance: ★★★☆☆
-            <br><br>
-            A girl tries to confess to her crush, and he
-            thinks that she’s asking for his autograph because
-            he is actually a very famous manga writer (although
-            nobody at school knows). She becomes his assistant
-            in hopes that she can get close with him and make
-            him realize her feelings. He is dumb and blind and
-            is always looking for inspiration for his manga.
-            Actually, every single character in this anime is
-            remarkably clueless.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="ouran.png" alt="Ouran">
-          </td>
-          <td>桜蘭高校ホスト部<br>
-            <b>Ouran High School Host Club</b>
-            <br><br>Humor: ★★★★★
-            <br>Romance: ★★★☆☆
-            <br><br>The protagonist becomes a host at her
-            rich private school's host club, where she
-            entertains her rich classmates with tea, small
-            talk, and basically just giving them attention.
-            However, she is hiding her gender and the fact
-            that she is actually there to repay the debt of
-            an expensive vase she broke on her first day as
-            a student. The blonde man is wildly in love with
-            her but doesn’t realize because he is stupid.
-            All the other hosts are charming and quirky in
-            their own way. Each episode is so ridiculous it
-            keeps you on your toes.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="aot.png" alt="AOT">
-          </td>
-          <td>進撃の巨人<br>
-            <b>Attack on Titan</b>
-            <br><br>Humor: ☆☆☆☆☆
-            <br>Romance: ☆☆☆☆☆
-            <br><br>Humanity fights titans.
-            Nice story. Very binge worthy.
-            Animation style changes in the middle and it's
-            a little distracting at first, but you get used to it.
-            When will they actually end the anime.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="kiss.png" alt="Kiss Him Not Me">
-          </td>
-          <td>私がモテてどうすんだ<br>
-            <b>Kiss Him Not Me</b>
-            <br><br>Humor: ★★★★★
-            <br>Romance: ★★★★★
-            <br><br>Chubby girl (who is obsessed with BL manga)
-            loses weight due to extreme shock from her favorite
-            character's death. Five hot people fight over her.
-            Kind of like Ouran but everyone is fighting for the
-            girl. Super lighthearted and funny, comedic changes
-            in animation style, pretty solid subtitles.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="saint.png" alt="Saint Young Men">
-          </td>
-          <td>聖☆おにいさん<br>
-            <b>Saint Young Men</b>
-            <br><br>Humor: ★★★★★
-            <br>Romance: ☆☆☆☆☆
-            <br><br>Jesus and Buddha live together in modern
-            day Tokyo. Comedy and Slice of life, subtitles
-            suck because some things in this anime are really
-            hard to translate without cultural context. Movie
-            length. The manga might be better for English
-            speakers, but I really enjoyed the anime regardless.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="oremonogatari.png" alt="Ore Monogatari">
-          </td>
-          <td>俺物語!!<br>
-            <b>Ore Monogatari!!</b>
-            <br><br>Humor: ★★★★★
-            <br>Romance: ★★★★★
-            <br><br>Big high school boy saves a little high
-            school girl from a creepy dude on the train and
-            then falls in love with her. They are both very
-            awkward and inexperienced, and he thinks that
-            she likes his best friend at first, but they
-            figure it out. Very cute.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="initial.png" alt="Initial D">
-          </td>
-          <td>頭文字D(イニシャルD)<br>
-            <b>Initial D</b>
-            <br><br>Humor: ★★★★☆
-            <br>Romance: ★☆☆☆☆
-            <br><br>
-            Unassuming dumb looking young man is literally
-            the fastest street racer alive other than his
-            old man, but even he doesn't realize that he's
-            fast since he doesn't race against other people,
-            he just makes tofu deliveries at the ass crack
-            of dawn and wants to be done as soon as possible.
-            Old anime but classic for a reason.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="jjk.jpg" alt="JJK">
-          </td>
-          <td>呪術廻戦
-            <br><b>Jujutsu Kaisen</b>
-            <br><br>Humor: ★★★★☆
-            <br>Romance: ☆☆☆☆☆
-            <br><br>Dude with (almost) superhuman physical
-            abilities gains actual superhuman abilities
-            by swallowing the finger of a really strong
-            dude. He then joins other strong people in
-            defeating curses and bad people. Good characters,
-            good plot, great animation, looking forward
-            to finishing season 2 later this year. The movie
-            is a must-watch btw it's not just an OVA.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="yuri.png" alt="Yuri on Ice">
-          </td>
-          <td>ユーリ!!! <b>On ICE
-              <br>Yuri on Ice</b>
-            <br><br>Humor: ★★★☆☆
-            <br>Romance: ★★☆☆☆
-            <br><br>Yuri wants to be a better ice skater,
-            but he kind of sucks. Victor, a world-famous
-            champion, basically retires to coach Yuri
-            because a video of Yuri informally skating
-            Victor's program goes viral. Gay (although
-            there are debates on whether some moments are
-            canon or not).
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: A-</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="magi.png" alt="magi">
-          </td>
-          <td>マギ<br>
-            <b>Magi: The Labyrinth of Magic</b>
-            <br><br>
-            Can't summarize it myself because too many good
-            things happen. Here's what Wikipedia had to say: 
-            "Taking place in a fantasy world that borrows elements from One Thousand and One Nights, the story follows a young boy named Aladdin and his traveling companion Alibaba, who go on adventures conquering dungeons to obtain valuable items, metal vessels, and powerful hosts capable of harnessing magic known as djinns. Upon completing their first dungeon, Aladdin learns of his identity as the titular Magi destined to ordain Alibaba to inherit the throne. As a result, the two decide to continue their travels all while forging friendships and rivalries along the way."
-            <br>
-            <br>
-            Great characters, cute animation. 
-          </td>
-        </tr>
-        <tr>
-          <td><img src="romkil.png" alt="romkil">
-          </td>
-          <td>ロマンティックキラー<br>
-            <b>Romantic Killer</b>
-            <br><br>Girl is only obsessed with games and
-            chocolate and her cat, but a magical entity takes
-            those away from her and forcibly changes her life
-            into an otome game where hot men appear into her
-            life and fight over her. Comedy, a little satirical at
-            times, super fun animation style. Super cheesy
-            but that's the whole point of the plot.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="yourname.jpeg" alt="Your Name">
-          </td>
-          <td>君の名は。<br>
-            <b>Your Name.</b>
-            <br><br>
-            A girl and a guy keep switching into each other's
-            bodies, and they soon discover that they are
-            actually from slightly different timelines as well.
-            The guy realizes that the girl is in danger, so
-            he does everything he can to try and save her
-            despite their conflicting time lines. A beautiful
-            movie, great even for non-anime watchers, stunning
-            visuals and a really striking storyline.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: B+</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="horimiya.png" alt="Horimiya">
-          </td>
-          <td>ホリミヤ<br>
-            <b>Horimiya</b>
-            <br><br>Shy introverted boy turns out to be very
-            cool with piercings and tats, falls in love with
-            the girl in the middle. Everyone falls in love
-            with someone. Nice school love story.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="hige.png" alt="hige">
-          </td>
-          <td>ひげを剃る。そして女子高生を拾う<br>
-            <b>Hige wo soru. Soshite jyoshikousei wo hirou.</b>
-            <br><br>Working salaryman finds a random runaway
-            teenage girl and lets her live at his house while
-            she figures things out. Surprisingly wholesome
-            even with the sad back story of the girl. Is this
-            a romance anime? He’s more of a father/big brother
-            figure. I cried.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="april.png" alt="Your Lie in April">
-          </td>
-          <td>四月は君の嘘<br>
-            <b>Your Lie in April</b>
-            <br><br>Bold girl with chronic illness pulls the
-            shy piano boy out of his shell. Tbh I don’t remember
-            the ending even though I’ve watched this multiple
-            times. I remember I cried a lot.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: B</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="kingdom.jpg" alt="Kingdom">
-          </td>
-          <td>キングダム<br>
-            <b>Kingdom</b>
-            <br><br>Peasant boy rises the ranks in Qin dynasty
-            of China and becomes good friends with the
-            child emperor.
-            His dream is to be the best general ever.
-            Lots of battles. Impressionable characters.
-            Questionable on the historical accuracy but
-            entertaining.
-          </td>
-        </tr>
-        
-        <tr>
-          <td><img src="yowamushi.png" alt="Yowamushi Pedal">
-          </td>
-          <td>弱虫ペダル<br>
-            <b>Yowamushi Pedal</b>
-            <br><br>Otaku boy turns out to be really good
-            at cycling because he cycles dozens of miles to
-            get to Akihabara to save money on travel and spend
-            it on his nerdy hobbies. Wholesome sports anime,
-            good characters, good plots, feel-good, really
-            really gross side character that I hate but you
-            can skip those parts (although he does show up a
-            lot). Very satisfying to watch, lots of humor.
-            Binge-worthy.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="chainsawman" alt="Chainsaw man">
-          </td>
-          <td>チェインソーマン<br>
-            <b>Chainsaw Man</b>
-            <br><br>Half human half demon boy is hired to
-            kill demons with a quirky team of individuals.
-            He is driven by the want to squeeze boobs.
-            The boss is so strong I just want to know where
-            she got her powers from. Binge worthy.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="gurren.jpg" alt="Gurren Lagann">
-          </td>
-          <td>天元突破グレンラガン<br>
-            <b>Gurren Lagann</b>
-            <br><br>
-            Boy from underground (who loves to dig holes with
-            his drill) world teams up with many people
-            to save the Earth from being destroyed. Very cool
-            animation that captures so many lines and shapes.
-            Lots of handsome mechas and handsome women.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="penguin.jpeg" alt="Penguin Highway">
-          </td>
-          <td>ペンギンハイウェイ<br>
-            <b>Penguin Highway</b>
-            <br><br>Super serious little boy researches why
-            penguins keep on mysteriously appearing in his town.
-            Beautiful animation, questionable actions by the
-            beautiful lady, handsome father, very anime-esque
-            plot. Movie length!
-          </td>
-        </tr>
-        <tr>
-          <td><img src="cider.png" alt="Words Bubble Up Like Soda Pop">
-          </td>
-          <td>ソーダのように言葉が湧き上がる<br>
-            <b>Words Bubble Up Like Soda Pop</b>
-            <br><br>Super cute movie about a social media
-            influencer who is insecure about her bunny teeth
-            and a super shy boy who writes haiku. They look
-            for a record together and stuff. I'm sure more
-            happens in the movie but I lowkey forgot because
-            I only watched it once. The animation colors are
-            super vibrant and refreshing.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="free.png" alt="Free!">
-          </td>
-          <td><b>Free!</b>
-            <br><br>Hot men. Good youth. What a lovely time.
-            TBH I don’t remember the plot. I assume they swim.
-            I remember it was great. I rewatched it like twice.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="komi.png" alt="Komi can't communicate">
-          </td>
-          <td>古見さんは、コミュ症です。<br>
-            <b>Komi Can't Communicate</b>
-            <br><br>Komi has a hard time speaking to other
-            people because of her social anxiety/communication
-            disorder, but she has a goal to make 100 friends.
-            She slowly accomplishes this goal by befriending
-            very quirky people at her school. Very wholesome,
-            very humorous - the anime takes the lighthearted
-            route rather than a serious one.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="orange.png" alt="orange">
-          </td>
-          <td><b>Orange</b>
-            <br><br>I remember really liking this anime but
-            it wasn’t memorable enough for me to remember.
-            I think someone dies.
-            Oh yeah I just looked up the plot and it’s the one
-            where they get letters from themselves in the future
-            asking them to save their friend from suicide.
-            Very classic anime plot, it was enjoyable.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="war.png" alt="Love is War">
-          </td>
-          <td>かぐや様は告らせたい ～天才たちの恋愛頭脳戦～<br>
-            <b>Love is War</b>
-            <br><br> note: I
-            <br><br>Two elite students like each other but will
-            rather literally die than confess their love because
-            the person who confesses first is always inferior in
-            a relationship. Super good anime, I have to finish
-            watching it. I think that there is a second season now.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="kake.png" alt="Kakegurui">
-          </td>
-          <td>賭ケグルイ<br><b>Kakegurui</b>
-            <br><br>Black haired heroine transfers into gambling school and is super good at gambling so she stirs things up at the school. Lots of gambling, lots of erotic references and drool, pretty good anime. I enjoyed it. I think there is a season 2 but I haven't seen it.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="weather.png" alt="Weathering With You">
-          </td>
-          <td>天気の子<br>
-            <b>Weathering With You</b>
-            <br><br>Girl can control the weather, they fall in
-            love. Good movie.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="deathnote.png" alt="Death Note">
-          </td>
-          <td>デスノート<br>
-            <b>Death Note</b>
-            <br><br>Super smart dude somehow gets a notebook
-            that kills anyone whose names are written down in
-            it. Another super smart dude tries to catch him.
-            It was a pretty good plot but I don’t think I would
-            rewatch.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="golden.png" alt="Golden Time">
-          </td>
-          <td>ゴールデンタイム<br>
-            <b>Golden Time</b>
-            <br><br>Guy gets amnesia at end of high school and
-            goes to college with no memories. Meets new friends,
-            makes a girlfriend, but memories fleet back sometimes
-            - but new and old self can’t coexist, and he realizes
-            that his new self will soon be erased. A little lacking
-            in humor for my taste, it’s a pretty serious story.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="saiki.png" alt="Saiki K">
-          </td>
-          <td>斉木楠雄のΨ難<br>
-            <b>The Disastrous Life of Saiki K.</b>
-            <br><br>Saiki navigates his life with his supernatural
-            and quite frankly unfairly strong powers surrounded
-            by idiots. No overarching storyline, just individual
-            episodes, so very low commitment. Filled with dry
-            sarcasm from Saiki. Pretty funny. Subtitles kind of suck.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="sakamoto.png" alt="Sakamoto">
-          </td>
-          <td>坂本ですが？<br>
-            <b>Haven't You Heard? I'm Sakamoto</b>
-            <br><br>Same type of show as Saiki K. Pretty good
-            for a background show. It’s just Sakamoto being cool af.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="kuroko.png" alt="Kuroko's Basketball">
-          </td>
-          <td>黒子のバスケ<br>
-            <b>Kuroko's Basketball</b>
-            <br><br>The main character is a good basketball
-            player because he is so unremarkable that players
-            don’t see him on the court. He is on a mission to
-            beat all of his former teammates, who are all god-level.
-            The plot is repetitive but it’s a solid show. Muscular arms.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="class.png" alt="Classroom of the Elite">
-          </td>
-          <td>ようこそ実力至上主義の教室へ<br>
-            <b>Classroom of the Elite</b>
-            <br><br>Super smart students are divided into classes
-            from A to D, and these classes are ranked based on the
-            class’s whole performance. The main dude is smart af
-            and was bred in some sort of facility or something but
-            he always lays low and makes sure to perform the average.
-            He helps his class perform well in various tests but
-            never takes the credit. But he seems to have an ulterior
-            motive.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="pancreas.png" alt="I Want to Eat Your Pancreas">
-          </td>
-          <td>君の膵臓をたべたい<br>
-            <b>I Want to Eat Your Pancreas</b>
-            <br><br>Girl with terminal illness befriends an antisocial
-            guy and does things on her bucket list with him.
-            <br>Pretty good movie I guess but there’s like zero comedy
-            so make sure you’re in a serious mood
-          </td>
-        </tr>
-        <tr>
-          <td><img src="koi-wa.jpeg" alt="After the Rain">
-          </td>
-          <td>恋は雨上がりのように<br>
-            <b>After the Rain</b>
-            <br><br>High school girl is in love with her boss, who is 45.
-            <br>Kinda wholesome I guess? But it had more comedy potential
-            that wasn’t fulfilled, also kinda weird how the boss isn’t
-            an adult enough to completely deny her fantasies. Maybe
-            it's a social commentary.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="high-rise.jpg" alt="High-rise">
-          </td>
-          <td>天空侵犯<br>
-            <b>High-Rise Invasion</b>
-            <br><br>Pretty solid plot but it’s kind of scary to
-            watch by yourself haha lots of gore tbh. Oh yeah it’s
-            the netflix show where the people are dropped off on
-            the roofs of buildings or whatever and then they have
-            to run away from the masked people, who are trying to
-            murder them all.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="neverland.png" alt="The Promised Neverland">
-          </td>
-          <td>約束のネバーランド<br>
-            <b>The Promised Neverland</b>
-            <br><br>Kids in orphanage are actually fed to monsters.
-            The orphans find this out so they try to escape. Pretty
-            good anime, pretty gory, wouldn’t rewatch but would
-            watch season 2
-            <br>Ok jk I got info that season 2 is not interesting
-          </td>
-        </tr>
-        <tr>
-          <td><img src="erased.png" alt="erased">
-          </td>
-          <td><b>Erased</b>
-            <br><br>Boy rescues girl from abusive home situation
-            and an unexpected person is the antagonist. TBH don’t
-            remember the plot too well but it was pretty good
-          </td>
-        </tr>
-        <tr>
-          <td><img src="banana.png" alt="Banana fish">
-          </td>
-          <td><b>Banana Fish</b>
-            <br><br>Japanese photographer boy gets caught up in
-            American gang violence.
-            <br>Good plot i guess… did not like the ending.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: B-</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="masamune.jpeg" alt="Masamune Kun No Revenge">
-          </td>
-          <td>政宗くんのリベンジ<br>
-            <b>Masamune Kun No Revenge</b>
-            <br><br>A formerly chubby guy gets hot and plots
-            revenge on the girl that broke his heart by getting
-            her to fall in love with him so that he can reject her.
-            <br>It was okay I guess. I don’t like seeing women
-            fight over a mediocre man. Also there needs to be an
-            actual ending where she figures out everything… Would
-            rate higher if they come out with season 2 that has an
-            actual ending.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="mashiro.jpeg" alt="Mashiro No Oto">
-          </td>
-          <td>ましろのおと<br>
-            <b>Mashiro No Oto</b>
-            <br><br>A boy who plays shamisen goes out and plays
-            shamisen… only watched two episodes, is probably a
-            really good story but it’s pretty serious so I’m not
-            entirely that interested.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="noragami.png" alt="noragami">
-          </td>
-          <td>ノラガミ<br>
-            <b>Noragami</b>
-            <br><br>A pretty low rank god meets a girl and
-            they fight monsters together. A boy turns into a
-            sword. Funny at times but overall a pretty serious
-            storyline, not my personal favorite since it’s very
-            action/serious/fantasy
-          </td>
-        </tr>
-        <tr>
-          <td><img src="suki.jpeg" alt="Say i love you">
-          </td>
-          <td>好きっていいなよ<br>
-            <b>Say "I Love You"</b>
-            <br><br>Shy girl and popular guy fall in love.
-            I don’t really remember anything else. Would
-            probably rank higher if I rewatch it but I’m
-            not a real fan of the animation style.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="househusband.jpeg" alt="The Way of the House Husband">
-          </td>
-          <td>極主夫道<br>
-            <b>The Way of the Househusband</b>
-            <br><br>I loved the manga but sadly the anime
-            wasn’t great, the animation style was really
-            leaning to a manga reading experience rather
-            than a smooth anime and it was a little too
-            simple. But anyways it’s an ex-yakuza member
-            who is now a loving stay-at-home househusband
-            (I don’t think he has a kid yet but I don’t
-            remember). Would recommend the manga but not
-            really the anime.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="toradora.jpg" alt="Toradora">
-          </td>
-          <td>とらドラ！<br>
-            <b>Toradora</b>
-            <br><br> Note: I
-            <br><br>Small feisty girl is enemies with mean
-            faced but kind hearted boy, but then they grow
-            closer and fall in love probably idk. I’ve started
-            this one a couple of times but never finished it.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="march.jpeg" alt="March Comes In Like a Lion">
-          </td>
-          <td>３月のライオン<br>
-            <b>March Comes In Like a Lion</b>
-            <br><br>Note: I
-            <br><br>Shogi whiz gets taken in by a nice girl
-            and her nice mom and little sister. I don’t think
-            I finished the anime bc it’s a slow and wholesome one.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: C</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="uramichi.webp" alt="Uramichi Oniisan">
-          </td>
-          <td>うらみちお兄さん<br>
-            <b>Uramichi Oniisan</b>
-            <br><br>Note: I
-            <br><br>Self deprecating and depressed man is
-            one of the hosts for a kids show. Lots of sarcasm
-            and depressing adult jokes, kind of a background
-            show. It's trying to be Saiki K and Sakamoto, but
-            it doesn't quite get there. Maybe it's funny if
-            you're depressed?
-          </td>
-        </tr>
-        <tr>
-          <td><img src="food.png" alt="food wars">
-          </td>
-          <td>食撃のソーマ<br>
-            <b>Food Wars</b>
-            <br><br>There’s a good plot but there’s so much
-            erotic things going on. The boobs are big and
-            while I enjoy big boobs these boobs are too
-            distracting and unnecessary. But the plot is
-            pretty good, the son of some restaurant owner
-            makes his way up the ranks of a culinary school.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="cells.jpeg" alt="cells at work">
-          </td>
-          <td>はたらく細胞!!<br>
-            <b>Cells at Work!</b>
-            <br><br>Note: I
-            <br><br>Personified, anime-fied version of human
-            body cells, systems, functions. Caters to a very
-            niche audience and I don’t think I am a part of
-            that audience. Good for all you pre meds out there.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="bunny.jpeg" alt="Bunny Girl Senpai">
-          </td>
-          <td>青春ブタ野郎はバニーガール先輩の夢を見ない
-            <br><b>Rascal Does Not Dream of Bunny Girl Senpai</b>
-            <br><br>Note: I
-            <br><br>I don’t think I’ve actually finished
-            watching it, I’ve tried a couple of times but
-            it was pretty boring I think. From what I remember,
-            this dude keeps seeing his senpai in a bunny girl
-            costume and nobody else seems to be seeing her.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="seven.jpeg" alt="Seven Deadly Sins">
-          </td>
-          <td>七つの大罪
-            <br><b>Seven Deadly Sins</b>
-            <br><br>Note: I
-            <br><br>Don’t see the hype. I guess it could be
-            entertaining for kids but there’s big boobs
-            everywhere. Kinda forgot the plot.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="maid.png" alt="maid-sama">
-          </td>
-          <td>会長はメイド様！
-            <br><b>Kaicho Wa Maid Sama!</b>
-            <br><br>Note: I
-            <br><br>Didn’t finish watching it but it was a
-            basic romance drama I think. Probably won’t
-            finish watching it.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: F</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="onizuka.jpeg" alt="Onizuka">
-          </td>
-          <td><b>Great Teacher Onizuka</b>
-            <br><br>Note: I
-            <br><br>This anime is old and you can really tell.
-            He’s a teacher and kinda pervy
-          </td>
-        </tr>
-        <tr>
-          <td><img src="swa.jpg" alt="SWA">
-          </td>
-          <td>ソードアート　オンライン
-            <br><b>Sword Art Online</b>
-            <br><br>Note: I
-            <br><br>I didn’t finish watching but… I’m not that
-            eager to finish watching it … I watched the first
-            couple of episodes but it wasn’t great. Was it some
-            kind of VR game world? I heard the later seasons
-            are better but I’m not even interested.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="anime-table grade-table">
-      <thead>
-        <tr>
-          <th class="sticky-header">Grade: I</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="mieruko.jpg" alt="Mieruko Chan">
-          </td>
-          <td>見える子ちゃん
-            <br><b>Mieruko Chan</b>
-            <br><br>This girl can see monsters and ghosts,
-            even though nobody else around her seems to be
-            able to see them.
-            <br>COULD NOT FINISH WATCHING! TOO SCARY
-            <br>The first scene was something CRAWLING OUT
-            OF THE FRIDGE no thank you :)
-            <br>I did try to watch it several times but
-            from what I remember, it was just very grotesque
-            and gross (not in a graphic way but just in a
-            really gross kimoi kind of way) and I simply did
-            not enjoy watching the show. Maybe there's a good
-            plot to make up for it somewhere? I'm not going
-            to find out, though
-          </td>
-        </tr>
-        <tr>
-          <td><img src="ijiranaide.webp" alt="Ijiranaide">
-          </td>
-          <td>イジらないで、長瀞さん
-            <br><b>Ijiranaide, Nagatoro-san</b>
-            <br><br>The girls were too annoying so I didn’t
-            finish watching the first episode. Gyaru type.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="inuyasha.jpg" alt="Inuyasha">
-          </td>
-          <td>犬夜叉
-            <br><b>Inuyasha</b>
-            <br><br>Cute comfort show. A group of hooligans
-            defeat monsters. There are so many episodes.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="hunter.jpg" alt="Hunter X Hunter">
-          </td>
-          <td>ハンターxハンター<br>
-            <b>Hunter x Hunter</b>
-            <br><br>I only watched a couple of episodes of
-            this (I think the first two or three?), so I don't
-            really know what happens later on in the show, but
-            it seemed like a pretty good show from the episodes
-            that I did see. It's not super high on my list of
-            priorities, though. Maybe if I'm watching it with
-            my younger siblings or something? I didn't really
-            see the appeal for me to watch it by myself, kind
-            of felt like a kids' anime.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="jojo.jpg" alt="Jojo">
-          </td>
-          <td>ジョジョの奇妙な冒険
-            <br><b>Jojo's Bizzare Adventures</b>
-            <br><br>I've been meaning to watch more than just
-            the first episode of this anime because I was really
-            disappointed by the episode but people told me that
-            it gets better over time... Maybe when I have the
-            free time and motivation? Not very high on my
-            priorities, though.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="fma.jpg" alt="FMA">
-          </td>
-          <td>鋼の錬金術師 <b>FULLMETAL ALCHEMIST
-              <br>Fullmetal Alchemist: Brotherhood</b>
-            <br><br>I've briefly seen a couple episodes. Like
-            the previous ones on this list, it's just not my
-            favorite genre so I'm not too eager to pick it up
-            and finish it by myself, but I see the appeal,
-            especially for younger audiences.
-          </td>
-        </tr>
-        <tr>
-          <td><img src="evangelion.jpg" alt="Evangelion">
-          </td>
-          <td>新世紀エヴァンゲリオン
-            <br><b>Neon Genesis Evangelion</b>
-            <br><br>I think I actually watched quite a big
-            chunk of this anime, but I do not remember some
-            key elements, so I don't think I can give it a
-            fair rating. It's not in my usual genre of anime
-            that I watch, and I know that there is a lot of
-            messages and imagery in it, so I'd love to sit
-            down and watch it with all of my concentration
-            when I am feeling up for it.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    by MT 2023
     <script>
       function createTrail(x, y) {
         const glitter = ['☆', '★', '♡', '❤︎', '✴︎', '。']
@@ -1254,6 +1291,28 @@
         });
       }
       
+      const sections = document.querySelectorAll('.content section');
+    const topicLinks = document.querySelectorAll('.topic-list li a');
+
+    window.addEventListener('scroll', () => {
+        let currentSection = '';
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 50; // Adjust offset as needed
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        topicLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSection) {
+                link.classList.add('active');
+            }
+        });
+    });
     </script>
   </body>
 </html>
