@@ -30,6 +30,11 @@
         padding-bottom: 10vh;
         margin-bottom: 10vh;
       }
+      h2 {
+        font-size: 15px;
+        font-family: "Lexend Deca", sans-serif;
+        line-height: 25px;
+      }
 
       img {
         width: 30vw;
@@ -285,7 +290,142 @@
         top: 7vh;
         font-family: "Passion One", cursive;
         font-size: 10vw;
+        color: white;
       }
+      
+:root {
+	--bg: #e3e4e8;
+	--fg: #17181c;
+	--input: #ffffff;
+	--primary: #255ff4;
+	--dur: 1s;
+	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1280 - 320));
+}
+
+form, input, .caret {
+	margin: auto;
+}
+form {
+	position: relative;
+	width: 100%;
+	max-width: 17em;
+}
+input, .caret {
+	display: block;
+	transition: all calc(var(--dur) * 0.5) linear;
+}
+input {
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.25em inset;
+	caret-color: var(--primary);
+	width: 2em;
+	height: 2em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  color: black;
+	font-family: "Lexend Deca", sans-serif;
+  font-size: 20px;
+}
+input:focus, input:valid {
+	background: var(--input);
+	border-radius: 0.25em;
+	box-shadow: none;
+	padding: 0.75em 1em;
+	transition-duration: calc(var(--dur) * 0.25);
+	transition-delay: calc(var(--dur) * 0.25);
+	width: 100%;
+	height: 3em;
+}
+input:focus {
+	animation: showCaret var(--dur) steps(1);
+	outline: transparent;
+}
+input:focus + .caret, input:valid + .caret {
+	animation: handleToCaret var(--dur) linear;
+	background: transparent;
+	width: 1px;
+	height: 1.5em;
+	transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+}
+input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+label {
+	color: #e3e4e8;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+.caret {
+	background: currentColor;
+	border-radius: 0 0 0.125em 0.125em;
+	margin-bottom: -0.6em;
+	width: 0.25em;
+	height: 1em;
+	transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
+	transform-origin: 50% 0;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {	
+	:root {
+		--bg: #17181c;
+		--fg: #e3e4e8;
+		--input: #2e3138;
+		--primary: #5583f6;
+	}
+}
+
+/* Animations */
+@keyframes showCaret {
+	from {
+		caret-color: transparent;
+	}
+	to {
+		caret-color: var(--primary);
+	}
+}
+@keyframes handleToCaret {
+	from {
+		background: currentColor;
+		width: 0.25em;
+		height: 1em;
+		transform: translate(0,-1em) rotate(-45deg) translate(0,0.875em);
+	}
+	25% {
+		background: currentColor;
+		width: 0.25em;
+		height: 1em;
+		transform: translate(0,-1em) rotate(-180deg) translate(0,0.875em);
+	}
+	50%, 62.5% {
+		background: var(--primary);
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,2.5em);
+	}
+	75%, 99% {
+		background: var(--primary);
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+	}
+	87.5% {
+		background: var(--primary);
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,0.125em);
+	}
+	to {
+		background: transparent;
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+	}
+}
     </style>
   </head>
   <body>
@@ -333,7 +473,11 @@
     <h1>
       Anime review
     </h1>
-    <input type="text" id="search" placeholder="Search shows">
+  <form>
+	<label for="search">Search</label>
+	<input id="search" type="text" pattern=".*\S.*" required>
+	<span class="caret"></span>
+</form>
     <div id="show-list">
       <div>
         <div class="grade">
@@ -341,6 +485,7 @@
         </div>
         <div class="show">
           <img src="haikyuu.png" alt="haikyuu">
+          <h2>
           ハイキュー!! <br>
           Haikyuu!! <br><br>
           Humor: ★★★★☆
@@ -359,10 +504,12 @@
           wait for a new season that may or may not be coming.
           The only complaint I have is that the animation in
           season 4 is really sucky sometimes, but that was
-          when COVID first hit, so I will give them a break.
+          when COVID first hit, so I will give them a break.</h2>
         </div>
         <div class="show">
           <img src="wotakoi.png" alt="wotakoi">
+          <h2>
+            
           ヲタクに恋は難しい <br>
           Wotakoi (wotaku ni koi wa muzukashii) <br><br>
           Humor: ★★★★★
@@ -377,7 +524,7 @@
           moments. All three love arcs in this anime are quality.
           <br> Good subtitles from what I've seen, but there
           are some internet slangs used in the show that aren't
-          translated at all.
+          translated at all.</h2>
         </div>
       </div>
       <div>
@@ -386,7 +533,7 @@
         </div>
         <div class="show">
           <img src="monthly.png" alt="Nozaki Kun">
-          月刊少女野崎くん<br>
+          <h2>月刊少女野崎くん<br>
           Monthly Girls' Nozaki Kun<br><br>
           Humor: ★★★★★
           <br>Romance: ★★★☆☆
@@ -398,11 +545,11 @@
           him realize her feelings. He is dumb and blind and
           is always looking for inspiration for his manga.
           Actually, every single character in this anime is
-          remarkably clueless.
+            remarkably clueless.</h2>
         </div>
         <div class="show">
           <img src="ouran.png" alt="Ouran">
-          桜蘭高校ホスト部<br>
+          <h2>桜蘭高校ホスト部<br>
           Ouran High School Host Club<br><br>
           Humor: ★★★★★
     <br>Romance: ★★★☆☆
@@ -417,11 +564,11 @@
     her but doesn’t realize because he is stupid.
     All the other hosts are charming and quirky in
     their own way. Each episode is so ridiculous it
-    keeps you on your toes.
+            keeps you on your toes.</h2>
         </div>
         <div class="show">
           <img src="aot.png" alt="AOT">
-          進撃の巨人<br>
+          <h2>進撃の巨人<br>
           Attack on Titan<br><br>
           Humor: ☆☆☆☆☆
       <br>Romance: ☆☆☆☆☆
@@ -429,11 +576,11 @@
       Nice story. Very binge worthy.
       Animation style changes in the middle and it's
       a little distracting at first, but you get used to it.
-      When will they actually end the anime.
+            When will they actually end the anime.</h2>
         </div>
         <div class="show">
           <img src="kiss.png" alt="Kiss Him Not Me">
-          私がモテてどうすんだ<br>
+          <h2>私がモテてどうすんだ<br>
           Kiss Him Not Me<br><br>
           Humor: ★★★★★
       <br>Romance: ★★★★★
@@ -442,11 +589,11 @@
       character's death. Five hot people fight over her.
       Kind of like Ouran but everyone is fighting for the
       girl. Super lighthearted and funny, comedic changes
-      in animation style, pretty solid subtitles.
+            in animation style, pretty solid subtitles.</h2>
         </div>
         <div class="show">
           <img src="saint.png" alt="Saint Young Men">
-          聖☆おにいさん<br>
+          <h2>聖☆おにいさん<br>
           Saint Young Men<br><br>
           Humor: ★★★★★
       <br>Romance: ☆☆☆☆☆
@@ -455,11 +602,11 @@
       suck because some things in this anime are really
       hard to translate without cultural context. Movie
       length. The manga might be better for English
-      speakers, but I really enjoyed the anime regardless.
+            speakers, but I really enjoyed the anime regardless.</h2>
         </div>
         <div class="show">
           <img src="oremonogatari.png" alt="Ore Monogatari">
-          俺物語!!<br>
+          <h2>俺物語!!<br>
           Ore Monogatari!!<br><br>
           Humor: ★★★★★
       <br>Romance: ★★★★★
@@ -468,11 +615,11 @@
       then falls in love with her. They are both very
       awkward and inexperienced, and he thinks that
       she likes his best friend at first, but they
-      figure it out. Very cute.
+            figure it out. Very cute.</h2>
         </div>
         <div class="show">
           <img src="initial.png" alt="Initial D">
-          頭文字D(イニシャルD)<br>
+          <h2>頭文字D(イニシャルD)<br>
           Initial D<br><br>
           Humor: ★★★★☆
       <br>Romance: ★☆☆☆☆
@@ -482,11 +629,11 @@
       fast since he doesn't race against other people,
       he just makes tofu deliveries at the ass crack
       of dawn and wants to be done as soon as possible.
-      Old anime but classic for a reason.
+            Old anime but classic for a reason.</h2>
         </div>
         <div class="show">
           <img src="jjk.jpg" alt="JJK">
-          呪術廻戦<br>
+          <h2>呪術廻戦<br>
           Jujutsu Kaisen<br><br>
           Humor: ★★★★☆
       <br>Romance: ☆☆☆☆☆
@@ -497,11 +644,11 @@
       defeating curses and bad people. Good characters,
       good plot, great animation, looking forward
       to finishing season 2 later this year. The movie
-      is a must-watch btw it's not just an OVA.
+            is a must-watch btw it's not just an OVA.</h2>
         </div>
         <div class="show">
           <img src="yuri.png" alt="Yuri on Ice">
-          ユーリ!!! <br>
+          <h2>ユーリ!!! <br>
           Yuri on Ice<br><br>
           Humor: ★★★☆☆
       <br>Romance: ★★☆☆☆
@@ -511,7 +658,7 @@
       because a video of Yuri informally skating
       Victor's program goes viral. Gay (although
       there are debates on whether some moments are
-      canon or not).
+            canon or not).</h2>
         </div>
       </div>
       <div>
@@ -520,18 +667,18 @@
         </div>
         <div class="show">
           <img src="magi.png" alt="magi">
-          マギ<br>
+          <h2>マギ<br>
           Magi: The Labyrinth of Magic<br><br>
           Can't summarize it myself because too many good
           things happen. Here's what Wikipedia had to say:
           "Taking place in a fantasy world that borrows elements from One Thousand and One Nights, the story follows a young boy named Aladdin and his traveling companion Alibaba, who go on adventures conquering dungeons to obtain valuable items, metal vessels, and powerful hosts capable of harnessing magic known as djinns. Upon completing their first dungeon, Aladdin learns of his identity as the titular Magi destined to ordain Alibaba to inherit the throne. As a result, the two decide to continue their travels all while forging friendships and rivalries along the way."
           <br>
           <br>
-          Great characters, cute animation.
+            Great characters, cute animation.</h2>
         </div>
         <div class="show">
           <img src="romkil.png" alt="romkil">
-          ロマンティックキラー<br>
+          <h2>ロマンティックキラー<br>
           Romantic Killer<br><br>
           Girl is only obsessed with games and
           chocolate and her cat, but a magical entity takes
@@ -539,11 +686,11 @@
           into an otome game where hot men appear into her
           life and fight over her. Comedy, a little satirical at
           times, super fun animation style. Super cheesy
-          but that's the whole point of the plot.
+            but that's the whole point of the plot.</h2>
         </div>
         <div class="show">
           <img src="yourname.jpeg" alt="Your Name">
-          君の名は。<br>
+          <h2>君の名は。<br>
           Your Name.<br><br>
           A girl and a guy keep switching into each other's
           bodies, and they soon discover that they are
@@ -552,7 +699,7 @@
           he does everything he can to try and save her
           despite their conflicting time lines. A beautiful
           movie, great even for non-anime watchers, stunning
-          visuals and a really striking storyline.
+            visuals and a really striking storyline.</h2>
         </div>
       </div>
       <div>
@@ -561,32 +708,32 @@
         </div>
         <div class="show">
           <img src="horimiya.png" alt="Horimiya">
-          ホリミヤ<br>
+          <h2>ホリミヤ<br>
           Horimiya<br><br>
           Shy introverted boy turns out to be very
           cool with piercings and tats, falls in love with
           the girl in the middle. Everyone falls in love
-          with someone. Nice school love story.
+            with someone. Nice school love story.</h2>
         </div>
         <div class="show">
           <img src="hige.png" alt="hige">
-          ひげを剃る。そして女子高生を拾う<br>
+          <h2>ひげを剃る。そして女子高生を拾う<br>
           Hige wo soru. Soshite jyoshikousei wo hirou.<br><br>
           Working salaryman finds a random runaway
           teenage girl and lets her live at his house while
           she figures things out. Surprisingly wholesome
           even with the sad back story of the girl. Is this
           a romance anime? He’s more of a father/big brother
-          figure. I cried.
+            figure. I cried.</h2>
         </div>
         <div class="show">
           <img src="april.png" alt="Your Lie in April">
-          四月は君の嘘<br>
+          <h2>四月は君の嘘<br>
           Your Lie in April<br><br>
           Bold girl with chronic illness pulls the
           shy piano boy out of his shell. Tbh I don’t remember
           the ending even though I’ve watched this multiple
-          times. I remember I cried a lot.
+            times. I remember I cried a lot.</h2>
         </div>
       </div>
       <div>
@@ -595,7 +742,7 @@
         </div>
         <div class="show">
           <img src="kingdom.jpg" alt="Kingdom">
-          キングダム<br>
+          <h2>キングダム<br>
           Kingdom<br><br>
           Peasant boy rises the ranks in Qin dynasty
           of China and becomes good friends with the
@@ -603,11 +750,11 @@
           His dream is to be the best general ever.
           Lots of battles. Impressionable characters.
           Questionable on the historical accuracy but
-          entertaining.
+            entertaining.</h2>
         </div>
         <div class="show">
           <img src="yowamushi.png" alt="Yowamushi Pedal">
-          弱虫ペダル<br>
+          <h2>弱虫ペダル<br>
           Yowamushi Pedal<br><br>
           Otaku boy turns out to be really good
           at cycling because he cycles dozens of miles to
@@ -617,41 +764,41 @@
           really gross side character that I hate but you
           can skip those parts (although he does show up a
           lot). Very satisfying to watch, lots of humor.
-          Binge-worthy.
+            Binge-worthy.</h2>
         </div>
         <div class="show">
           <img src="chainsawman" alt="Chainsaw man">
-          チェインソーマン<br>
+          <h2>チェインソーマン<br>
           Chainsaw Man<br><br>
           Half human half demon boy is hired to
           kill demons with a quirky team of individuals.
           He is driven by the want to squeeze boobs.
           The boss is so strong I just want to know where
-          she got her powers from. Binge worthy.
+            she got her powers from. Binge worthy.</h2>
         </div>
         <div class="show">
           <img src="gurren.jpg" alt="Gurren Lagann">
-          天元突破グレンラガン<br>
+         <h2> 天元突破グレンラガン<br>
           Gurren Lagann<br><br>
           Boy from underground (who loves to dig holes with
           his drill) world teams up with many people
           to save the Earth from being destroyed. Very cool
           animation that captures so many lines and shapes.
-          Lots of handsome mechas and handsome women.
+           Lots of handsome mechas and handsome women.</h2>
         </div>
         <div class="show">
           <img src="penguin.jpeg" alt="Penguin Highway">
-          ペンギンハイウェイ<br>
+          <h2>ペンギンハイウェイ<br>
           Penguin Highway<br><br>
           Super serious little boy researches why
           penguins keep on mysteriously appearing in his town.
           Beautiful animation, questionable actions by the
           beautiful lady, handsome father, very anime-esque
-          plot. Movie length!
+          plot. Movie length!</h2>
         </div>
         <div class="show">
           <img src="cider.png" alt="Words Bubble Up Like Soda Pop">
-          ソーダのように言葉が湧き上がる<br>
+          <h2>ソーダのように言葉が湧き上がる<br>
           Words Bubble Up Like Soda Pop<br><br>
           Super cute movie about a social media
           influencer who is insecure about her bunny teeth
@@ -659,18 +806,18 @@
           for a record together and stuff. I'm sure more
           happens in the movie but I lowkey forgot because
           I only watched it once. The animation colors are
-          super vibrant and refreshing.
+          super vibrant and refreshing.</h2>
         </div>
         <div class="show">
           <img src="free.png" alt="Free!">
-          Free!<br><br>
+          <h2>Free!<br><br>
           Hot men. Good youth. What a lovely time.
           TBH I don’t remember the plot. I assume they swim.
-          I remember it was great. I rewatched it like twice.
+          I remember it was great. I rewatched it like twice.</h2>
         </div>
         <div class="show">
           <img src="str.png" alt="Summertime Rendering">
-          サマータイムレンダ<br>
+          <h2>サマータイムレンダ<br>
           Summer Time Rendering<br><br>
           Boy must save the people on his island
           from getting killed by shadow monsters, and he
@@ -678,11 +825,11 @@
           Pretty classic anime plot, still manages to
           incorporate romantic elements, solid cast of
           characters. Also had really really good reviews on
-          Japanese TikTok comments.
+          Japanese TikTok comments.</h2>
         </div>
         <div class="show">
           <img src="komi.png" alt="Komi can't communicate">
-          古見さんは、コミュ症です。<br>
+          <h2>古見さんは、コミュ症です。<br>
           Komi Can't Communicate<br><br>
           Komi has a hard time speaking to other
           people because of her social anxiety/communication
@@ -690,92 +837,92 @@
           She slowly accomplishes this goal by befriending
           very quirky people at her school. Very wholesome,
           very humorous - the anime takes the lighthearted
-          route rather than a serious one.
+          route rather than a serious one.</h2>
         </div>
         <div class="show">
           <img src="orange.png" alt="orange">
-          Orange<br><br>
+          <h2>Orange<br><br>
           I remember really liking this anime but
           it wasn’t memorable enough for me to remember.
           I think someone dies.
           Oh yeah I just looked up the plot and it’s the one
           where they get letters from themselves in the future
           asking them to save their friend from suicide.
-          Very classic anime plot, it was enjoyable.
+          Very classic anime plot, it was enjoyable.</h2>
         </div>
         <div class="show">
           <img src="war.png" alt="Love is War">
-          かぐや様は告らせたい ～天才たちの恋愛頭脳戦～<br>
+          <h2>かぐや様は告らせたい ～天才たちの恋愛頭脳戦～<br>
           Love is War<br><br>
           <br><br> note: I
           <br><br>Two elite students like each other but will
           rather literally die than confess their love because
           the person who confesses first is always inferior in
           a relationship. Super good anime, I have to finish
-          watching it. I think that there is a second season now.
+          watching it. I think that there is a second season now.</h2>
         </div>
         <div class="show">
           <img src="kake.png" alt="Kakegurui">
-          賭ケグルイ<br>Kakegurui
+          <h2>賭ケグルイ<br>Kakegurui
           <br><br>Black haired heroine transfers into gambling 
           school and is super good at gambling so she stirs 
           things up at the school. Lots of gambling, lots of 
           erotic references and drool, pretty good anime. 
           I enjoyed it. I think there is a season 2 but I 
-          haven't seen it.
+          haven't seen it.</h2>
         </div>
         <div class="show">
           <img src="weather.png" alt="Weathering With You">
-          天気の子<br>Weathering With You
+          <h2>天気の子<br>Weathering With You
           <br><br>Girl can control the weather, they fall in
-          love. Good movie.
+          love. Good movie.</h2>
         </div>
         <div class="show">
           <img src="deathnote.png" alt="Death Note">
-          デスノート<br>Death Note
+          <h2>デスノート<br>Death Note
           <br><br>Super smart dude somehow gets a notebook
           that kills anyone whose names are written down in
           it. Another super smart dude tries to catch him.
           It was a pretty good plot but I don’t think I would
-          rewatch.
+          rewatch.</h2>
         </div>
         <div class="show">
           <img src="golden.png" alt="Golden Time">
-          ゴールデンタイム<br>Golden Time
+          <h2>ゴールデンタイム<br>Golden Time
           <br><br>Guy gets amnesia at end of high school and
           goes to college with no memories. Meets new friends,
           makes a girlfriend, but memories fleet back sometimes
           - but new and old self can’t coexist, and he realizes
           that his new self will soon be erased. A little lacking
-          in humor for my taste, it’s a pretty serious story.
+          in humor for my taste, it’s a pretty serious story.</h2>
         </div>
         <div class="show">
           <img src="saiki.png" alt="Saiki K">
-          斉木楠雄のΨ難<br>The Disastrous Life of Saiki K.
+          <h2>斉木楠雄のΨ難<br>The Disastrous Life of Saiki K.
           <br><br>Saiki navigates his life with his supernatural
           and quite frankly unfairly strong powers surrounded
           by idiots. No overarching storyline, just individual
           episodes, so very low commitment. Filled with dry
-          sarcasm from Saiki. Pretty funny. Subtitles kind of suck.
+          sarcasm from Saiki. Pretty funny. Subtitles kind of suck.</h2>
         </div>
         <div class="show">
           <img src="sakamoto.png" alt="Sakamoto">
-          坂本ですが？<br>Haven't You Heard? I'm Sakamoto
+          <h2>坂本ですが？<br>Haven't You Heard? I'm Sakamoto
           <br><br>Same type of show as Saiki K. Pretty good
-          for a background show. It’s just Sakamoto being cool af.
+          for a background show. It’s just Sakamoto being cool af.</h2>
         </div>
         <div class="show">
           <img src="kuroko.png" alt="Kuroko's Basketball">
-          黒子のバスケ<br>Kuroko's Basketball
+          <h2>黒子のバスケ<br>Kuroko's Basketball
           <br><br>The main character is a good basketball
           player because he is so unremarkable that players
           don’t see him on the court. He is on a mission to
           beat all of his former teammates, who are all god-level.
-          The plot is repetitive but it’s a solid show. Muscular arms.
+          The plot is repetitive but it’s a solid show. Muscular arms.</h2>
         </div>
         <div class="show">
           <img src="class.png" alt="Classroom of the Elite">
-          ようこそ実力至上主義の教室へ<br>Classroom of the Elite
+          <h2>ようこそ実力至上主義の教室へ<br>Classroom of the Elite
           <br><br>Super smart students are divided into classes
           from A to D, and these classes are ranked based on the
           class’s whole performance. The main dude is smart af
@@ -783,57 +930,57 @@
           he always lays low and makes sure to perform the average.
           He helps his class perform well in various tests but
           never takes the credit. But he seems to have an ulterior
-          motive.
+          motive.</h2>
         </div>
         <div class="show">
           <img src="pancreas.png" alt="I Want to Eat Your Pancreas">
-          君の膵臓をたべたい<br>I Want to Eat Your Pancreas
+          <h2>君の膵臓をたべたい<br>I Want to Eat Your Pancreas
           <br><br>Girl with terminal illness befriends an antisocial
           guy and does things on her bucket list with him.
           <br>Pretty good movie I guess but there’s like zero comedy
-          so make sure you’re in a serious mood
+          so make sure you’re in a serious mood</h2>
         </div>
         <div class="show">
           <img src="koi-wa.jpeg" alt="After the Rain">
-          恋は雨上がりのように<br>After the Rain
+          <h2>恋は雨上がりのように<br>After the Rain
           <br><br>High school girl is in love with her boss, who is 45.
           <br>Kinda wholesome I guess? But it had more comedy potential
           that wasn’t fulfilled, also kinda weird how the boss isn’t
           an adult enough to completely deny her fantasies. Maybe
-          it's a social commentary.
+          it's a social commentary.</h2>
         </div>
         <div class="show">
           <img src="high-rise.jpg" alt="High-rise">
-          天空侵犯<br>High-Rise Invasion
+          <h2>天空侵犯<br>High-Rise Invasion
           <br><br>Pretty solid plot but it’s kind of scary to
           watch by yourself haha lots of gore tbh. Oh yeah it’s
           the netflix show where the people are dropped off on
           the roofs of buildings or whatever and then they have
           to run away from the masked people, who are trying to
-          murder them all.
+          murder them all.</h2>
         </div>
         <div class="show">
           <img src="neverland.png" alt="The Promised Neverland">
-          約束のネバーランド<br>The Promised Neverland
+          <h2>約束のネバーランド<br>The Promised Neverland
           <br><br>Kids in orphanage are actually fed to monsters.
           The orphans find this out so they try to escape. Pretty
           good anime, pretty gory, wouldn’t rewatch but would
           watch season 2
-          <br>Ok jk I got info that season 2 is not interesting
+          <br>Ok jk I got info that season 2 is not interesting</h2>
         </div>
         <div class="show">
           <img src="erased.png" alt="erased">
-          Erased
+          <h2>Erased
           <br><br>Boy rescues girl from abusive home situation
           and an unexpected person is the antagonist. TBH don’t
-          remember the plot too well but it was pretty good
+          remember the plot too well but it was pretty good</h2>
         </div>
         <div class="show">
           <img src="banana.png" alt="Banana fish">
-          Banana Fish
+          <h2>Banana Fish
           <br><br>Japanese photographer boy gets caught up in
           American gang violence.
-          <br>Good plot i guess… did not like the ending.
+          <br>Good plot i guess… did not like the ending.</h2>
         </div>
       </div>
       <div>
@@ -842,7 +989,7 @@
         </div>
         <div class="show">
           <img src="masamune.jpeg" alt="Masamune Kun No Revenge">
-          政宗くんのリベンジ<br>
+          <h2>政宗くんのリベンジ<br>
           Masamune Kun No Revenge
           <br><br>A formerly chubby guy gets hot and plots
           revenge on the girl that broke his heart by getting
@@ -851,39 +998,39 @@
           fight over a mediocre man. Also there needs to be an
           actual ending where she figures out everything… Would
           rate higher if they come out with season 2 that has an
-          actual ending.
+          actual ending.</h2>
         </div>
         <div class="show">
           <img src="mashiro.jpeg" alt="Mashiro No Oto">
-          ましろのおと<br>
+          <h2>ましろのおと<br>
           Mashiro No Oto
           <br><br>A boy who plays shamisen goes out and plays
           shamisen… only watched two episodes, is probably a
           really good story but it’s pretty serious so I’m not
-          entirely that interested.
+          entirely that interested.</h2>
         </div>
         <div class="show">
           <img src="noragami.png" alt="noragami">
-          ノラガミ<br>
+          <h2>ノラガミ<br>
           Noragami
           <br><br>A pretty low rank god meets a girl and
           they fight monsters together. A boy turns into a
           sword. Funny at times but overall a pretty serious
           storyline, not my personal favorite since it’s very
-          action/serious/fantasy
+          action/serious/fantasy</h2>
         </div>
         <div class="show">
           <img src="suki.jpeg" alt="Say i love you">
-          好きっていいなよ<br>
+          <h2>好きっていいなよ<br>
           Say "I Love You"
           <br><br>Shy girl and popular guy fall in love.
           I don’t really remember anything else. Would
           probably rank higher if I rewatch it but I’m
-          not a real fan of the animation style.
+          not a real fan of the animation style.</h2>
         </div>
         <div class="show">
           <img src="househusband.jpeg" alt="The Way of the House Husband">
-          極主夫道<br>
+          <h2>極主夫道<br>
           The Way of the Househusband
           <br><br>I loved the manga but sadly the anime
           wasn’t great, the animation style was really
@@ -893,26 +1040,26 @@
           who is now a loving stay-at-home househusband
           (I don’t think he has a kid yet but I don’t
           remember). Would recommend the manga but not
-          really the anime.
+          really the anime.</h2>
         </div>
         <div class="show">
           <img src="toradora.jpg" alt="Toradora">
-          とらドラ！<br>
+          <h2>とらドラ！<br>
           Toradora
           <br><br>Note: I
           <br><br>Small feisty girl is enemies with mean
           faced but kind hearted boy, but then they grow
           closer and fall in love probably idk. I’ve started
-          this one a couple of times but never finished it.
+          this one a couple of times but never finished it.</h2>
         </div>
         <div class="show">
           <img src="march.jpeg" alt="March Comes In Like a Lion">
-          ３月のライオン<br>
+          <h2>３月のライオン<br>
           March Comes In Like a Lion
           <br><br>Note: I
           <br><br>Shogi whiz gets taken in by a nice girl
           and her nice mom and little sister. I don’t think
-          I finished the anime bc it’s a slow and wholesome one.
+          I finished the anime bc it’s a slow and wholesome one.</h2>
         </div>
       </div>
       <div>
@@ -921,7 +1068,7 @@
         </div>
         <div class="show">
           <img src="uramichi.webp" alt="Uramichi Oniisan">
-          うらみちお兄さん<br>
+          <h2>うらみちお兄さん<br>
           Uramichi Oniisan
           <br><br>Note: I
           <br><br>Self deprecating and depressed man is
@@ -929,11 +1076,11 @@
           and depressing adult jokes, kind of a background
           show. It's trying to be Saiki K and Sakamoto, but
           it doesn't quite get there. Maybe it's funny if
-          you're depressed?
+          you're depressed?</h2>
         </div>
         <div class="show">
           <img src="food.png" alt="food wars">
-          食撃のソーマ<br>
+          <h2>食撃のソーマ<br>
           Food Wars
           <br><br>Note: I
           <br><br>There’s a good plot but there’s so much
@@ -941,46 +1088,46 @@
           while I enjoy big boobs these boobs are too
           distracting and unnecessary. But the plot is
           pretty good, the son of some restaurant owner
-          makes his way up the ranks of a culinary school.
+          makes his way up the ranks of a culinary school.</h2>
         </div>
         <div class="show">
           <img src="cells.jpeg" alt="cells at work">
-          はたらく細胞!!<br>
+          <h2>はたらく細胞!!<br>
           Cells at Work!
           <br><br>Note: I
           <br><br>Personified, anime-fied version of human
           body cells, systems, functions. Caters to a very
           niche audience and I don’t think I am a part of
-          that audience. Good for all you pre meds out there.
+          that audience. Good for all you pre meds out there.</h2>
         </div>
         <div class="show">
           <img src="bunny.jpeg" alt="Bunny Girl Senpai">
-          青春ブタ野郎はバニーガール先輩の夢を見ない<br>
+          <h2>青春ブタ野郎はバニーガール先輩の夢を見ない<br>
           Rascal Does Not Dream of Bunny Girl Senpai
           <br><br>Note: I
           <br><br>I don’t think I’ve actually finished
           watching it, I’ve tried a couple of times but
           it was pretty boring I think. From what I remember,
           this dude keeps seeing his senpai in a bunny girl
-          costume and nobody else seems to be seeing her.
+          costume and nobody else seems to be seeing her.</h2>
         </div>
         <div class="show">
           <img src="seven.jpeg" alt="Seven Deadly Sins">
-          七つの大罪<br>
+          <h2>七つの大罪<br>
           Seven Deadly Sins
           <br><br>Note: I
           <br><br>Don’t see the hype. I guess it could be
           entertaining for kids but there’s big boobs
-          everywhere. Kinda forgot the plot.
+          everywhere. Kinda forgot the plot.</h2>
         </div>
         <div class="show">
           <img src="maid.png" alt="maid-sama">
-          会長はメイド様！<br>
+          <h2>会長はメイド様！<br>
           Kaicho Wa Maid Sama!
           <br><br>Note: I
           <br><br>Didn’t finish watching it but it was a
           basic romance drama I think. Probably won’t
-          finish watching it.
+          finish watching it.</h2>
         </div>
       </div>
       <div>
@@ -989,21 +1136,21 @@
         </div>
         <div class="show">
           <img src="onizuka.jpeg" alt="Onizuka">
-          Great Teacher Onizuka
+          <h2>Great Teacher Onizuka
           <br><br>Note: I
           <br><br>This anime is old and you can really tell.
-          He’s a teacher and kinda pervy
+          He’s a teacher and kinda pervy</h2>
         </div>
         <div class="show">
           <img src="swa.jpg" alt="SWA">
-          ソードアート　オンライン<br>
+          <h2>ソードアート　オンライン<br>
           Sword Art Online
           <br><br>Note: I
           <br><br>I didn’t finish watching but… I’m not that
           eager to finish watching it … I watched the first
           couple of episodes but it wasn’t great. Was it some
           kind of VR game world? I heard the later seasons
-          are better but I’m not even interested.
+          are better but I’m not even interested.</h2>
         </div>
       </div>
       <div>
@@ -1012,7 +1159,7 @@
         </div>
         <div class="show">
           <img src="mieruko.jpg" alt="Mieruko Chan">
-          見える子ちゃん<br>
+          <h2>見える子ちゃん<br>
           Mieruko Chan
           <br><br>Note: I
           <br><br>This girl can see monsters and ghosts,
@@ -1027,25 +1174,25 @@
           really gross kimoi kind of way) and I simply did
           not enjoy watching the show. Maybe there's a good
           plot to make up for it somewhere? I'm not going
-          to find out, though
+          to find out, though</h2>
         </div>
         <div class="show">
           <img src="ijiranaide.webp" alt="Ijiranaide">
-          イジらないで、長瀞さん<br>
+          <h2>イジらないで、長瀞さん<br>
           Ijiranaide, Nagatoro-san
           The girls were too annoying so I didn’t
-          finish watching the first episode. Gyaru type.
+          finish watching the first episode. Gyaru type.</h2>
         </div>
         <div class="show">
           <img src="inuyasha.jpg" alt="Inuyasha">
-          犬夜叉<br>
+          <h2>犬夜叉<br>
           Inuyasha
           <br><br>Cute comfort show. A group of hooligans
-          defeat monsters. There are so many episodes.
+          defeat monsters. There are so many episodes.</h2>
         </div>
         <div class="show">
           <img src="hunter.jpg" alt="Hunter X Hunter">
-          ハンターxハンター<br>
+          <h2>ハンターxハンター<br>
           Hunter x Hunter
           <br><br>I only watched a couple of episodes of
           this (I think the first two or three?), so I don't
@@ -1055,31 +1202,31 @@
           priorities, though. Maybe if I'm watching it with
           my younger siblings or something? I didn't really
           see the appeal for me to watch it by myself, kind
-          of felt like a kids' anime.
+          of felt like a kids' anime.</h2>
         </div>
         <div class="show">
           <img src="jojo.jpg" alt="Jojo">
-          ジョジョの奇妙な冒険<br>
+          <h2>ジョジョの奇妙な冒険<br>
           Jojo's Bizzare Adventures
           <br><br>I've been meaning to watch more than just
           the first episode of this anime because I was really
           disappointed by the episode but people told me that
           it gets better over time... Maybe when I have the
           free time and motivation? Not very high on my
-          priorities, though.
+          priorities, though.</h2>
         </div>
         <div class="show">
           <img src="fma.jpg" alt="FMA">
-          鋼の錬金術師 FULLMETAL ALCHEMIST <br> Fullmetal Alchemist: Brotherhood
+          <h2>鋼の錬金術師 FULLMETAL ALCHEMIST <br> Fullmetal Alchemist: Brotherhood
           <br><br>I've briefly seen a couple episodes. Like
           the previous ones on this list, it's just not my
           favorite genre so I'm not too eager to pick it up
           and finish it by myself, but I see the appeal,
-          especially for younger audiences.
+          especially for younger audiences.</h2>
         </div>
         <div class="show">
           <img src="evangelion.jpg" alt="Evangelion">
-          新世紀エヴァンゲリオン<br> Neon Genesis Evangelion
+          <h2>新世紀エヴァンゲリオン<br> Neon Genesis Evangelion
           <br><br>I think I actually watched quite a big
           chunk of this anime, but I do not remember some
           key elements, so I don't think I can give it a
@@ -1087,21 +1234,8 @@
           that I watch, and I know that there is a lot of
           messages and imagery in it, so I'd love to sit
           down and watch it with all of my concentration
-          when I am feeling up for it.
+          when I am feeling up for it.</h2>
         </div>
-        <div class="show">
-          <img src="evangelion.jpg" alt="Evangelion">
-          新世紀エヴァンゲリオン<br> Neon Genesis Evangelion
-          <br><br>I think I actually watched quite a big
-          chunk of this anime, but I do not remember some
-          key elements, so I don't think I can give it a
-          fair rating. It's not in my usual genre of anime
-          that I watch, and I know that there is a lot of
-          messages and imagery in it, so I'd love to sit
-          down and watch it with all of my concentration
-          when I am feeling up for it.
-        </div>
-        
       </div>
     </div>
   <script>
